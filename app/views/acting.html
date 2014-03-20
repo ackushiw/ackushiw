@@ -1,15 +1,15 @@
 <div class="content-background">
     <div class="container-fluid">
         <content-nav></content-nav>
-        <br/>
+        <hr/>
         <div id="carousel-acting" class="carousel slide" data-ride="carousel">
-            
+
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active col-md-4 col-md-offset-4">
-                    <iframe class="reel-shadow" width="560" height="315" src="//www.youtube.com/embed/wc6kwuewwHc?wmode=transparent" frameborder="0" allowfullscreen></iframe>                    
-                </div>                
+                    <iframe class="reel-shadow" width="560" height="315" src="//www.youtube.com/embed/wc6kwuewwHc?wmode=transparent" frameborder="0" allowfullscreen></iframe>
+                </div>
             </div>
 
             <!-- Controls -->
@@ -20,20 +20,46 @@
                 <span class=""></span>
             </div>
         </div>
-        
-        <div id="acting-info" class="acting-content row">
-        	<div class="col-md-4">
-        	    <headshot id="headshot"></headshot>
-        	</div>
-        	<div class="col-md-8">
-        	    <resume id="resume"></resume>
-        	</div>        
-            <div class="footer">
-                <p>♥ from the Yeoman team</p>
+
+        <div id="acting-info" class="acting-content">
+            <div class="col-md-4">
+                <headshot id="headshot"></headshot>
             </div>
+            <div class="col-md-8">
+                <resume id="resume"></resume>
+            </div>
+            <div class="panel">
+                <div ng-controller="AccordionDemoCtrl">
+                    <label class="checkbox">
+                        <input type="checkbox" ng-model="oneAtATime">Open only one at a time
+                    </label>
+
+                    <accordion close-others="oneAtATime">
+                        <accordion-group heading="Static Header, initially expanded" is-open="true">
+                            This content is straight in the template.
+                        </accordion-group>
+                        <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                            {{group.content}}
+                        </accordion-group>
+                        <accordion-group heading="Dynamic Body Content">
+                            <p>The body of the accordion group grows to fit the contents</p>
+                            <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                            <div ng-repeat="item in items">{{item}}</div>
+                        </accordion-group>
+                        <accordion-group is-open="isopen">
+                            <accordion-heading>
+                                I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+                            </accordion-heading>
+                            This is just some content to illustrate fancy headings.
+                        </accordion-group>
+                    </accordion>
+                </div>
+            </div>
+
         </div>
-        <footer>
-        	<div class="container-fluid footer">
+
+        <footer class="footer">
+            <div class="container">
                 <p>♥ from the Yeoman team</p>
             </div>
         </footer>

@@ -5,18 +5,15 @@ angular.module('ackushiwApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui'
+  'ui.bootstrap'
+  
 ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .when('/navbar', {
-        templateUrl: 'views/navbar.html',
-        controller: 'NavbarCtrl'
-      })
+      })      
       .when('/acting', {
         templateUrl: 'views/acting.html',
         controller: 'ActingCtrl'
