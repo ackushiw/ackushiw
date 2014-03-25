@@ -4,8 +4,7 @@ angular.module('ackushiwApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute',
-  'ui.bootstrap'
+  'ngRoute'
   
 ])
   .config(function ($routeProvider) {
@@ -13,7 +12,7 @@ angular.module('ackushiwApp', [
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })      
+      })
       .when('/acting', {
         templateUrl: 'views/acting.html',
         controller: 'ActingCtrl'
