@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ackushiwApp', ['ui.bootstrap'])
+angular.module('ackushiwApp')
     .controller('ActingCtrl', function($scope) {
         $scope.oneAtATime = true;
 
