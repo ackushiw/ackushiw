@@ -5,7 +5,5 @@ angular.module('ackushiwApp')
         return {
             restrict: 'E',
             templateUrl: 'views/content-nav.html',
-
-
         };
     });
