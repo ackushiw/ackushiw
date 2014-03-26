@@ -3,8 +3,8 @@
         <accordion close-others="accordion">
             <accordion-group is-open="true">
                 <accordion-heading>
-                    Stats
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': true, 'glyphicon-chevron-right': !true}"></i>
+                    <h3>Alexander Kushi-Willis</h3>
+                    
                 </accordion-heading>
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -43,7 +43,7 @@
                     <table class="table table-striped">
                         <tr ng-repeat="value in film">
                             <td>{{value.title}}</td>
-                            <td>{{value.role}}</td>
+                            <td>{{value.character}}</td>
                             <td>{{value.director}}</td>
                         </tr>
                     </table>
@@ -59,7 +59,7 @@
                         <tr ng-repeat="value in commercial">
                             <td>{{value.title}}</td>
                             <td>{{value.role}}</td>
-                            <td>{{value.production}}</td>
+                            <td>{{value.director}}</td>
                         </tr>
                     </table>
                 </div>
@@ -85,13 +85,11 @@
                     <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen6, 'glyphicon-chevron-right': !isopen6}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
-                    <table class="table table-striped">
-                        <tr ng-repeat="class in training">
-                            <td>{{class.name}}</td>
-                            <td>{{class.teacher}}</td>
-                            <td>{{class.style}}</td>
-                        </tr>
-                    </table>
+                    
+                        <ul ng-repeat="class in training">
+                            <li>{{class.list}}</li>
+                        </ul>
+                    
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen7">
@@ -102,7 +100,7 @@
 
                 <div>
                     <ul ng-repeat="skill in skills">
-                        <li></li>
+                        <li>{{skill.list}}</li>
                     </ul>
                 </div>
             </accordion-group>            

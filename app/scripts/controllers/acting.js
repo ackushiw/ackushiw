@@ -8,7 +8,7 @@ angular.module('ackushiwApp')
             eyes: 'Dark Hazel',
             hair: 'Dark Brown',
             height: '5\' 10"',
-            weight: '145lb'
+            weight: '145 lb'
         };
 
         $scope.theater = [
@@ -48,157 +48,113 @@ angular.module('ackushiwApp')
 
         $scope.film = [
         {
-            title: 'Stats',
-            character: 'test',
-            director: 'testdir'
+            title: 'Deep Down',
+            character: 'Canute',
+            director: 'Klark Chaudry, Dir'
         },  {
-            title: 'Theater',
-            character: 'test',
-            director: 'testdir'
+            title: 'Release You',
+            character: 'Lake Ghost',
+            director: 'Jessica Burgess'
         },  {
-            title: 'Film',
-            character: 'test',
-            director: 'testdir'
+            title: 'Hard Times',
+            character: 'Tiko',
+            director: 'Matthew Glasson'
         }, {
-            title: 'Commercial',
-            character: 'test',
-            director: 'testdir'
+            title: 'Nom Wah',
+            character: 'Kenichi',
+            director: 'Kevin Foong'
         }, {
-            title: 'Conservatory Theater, AADA NYC',
-            character: 'test',
-            director: 'testdir'
+            title: 'Burning Man',
+            character: 'The Man in White',
+            director: 'Arin Crumley'
         }, {
-            title: 'Training',
-            character: 'test',
-            director: 'testdir'
+            title: 'On the Way to Heaven',
+            character: 'Steven',
+            director: 'Motomu Ishigaki'
         },  {
-            title: 'Skills',
-            character: 'test',
-            director: 'testdir'
+            title: 'Ep. 11 Poetry Brothel',
+            character: 'The Outsider',
+            director: 'Radar (WBP Labs)'
         }];
 
         $scope.commercial = [
         {
-            title: 'Stats',
-            character: 'test',
-            director: 'testdir'
+            title: 'Freia',
+            role: 'Assistant',
+            director: ''
         },  {
-            title: 'Theater',
-            character: 'test',
-            director: 'testdir'
+            title: 'Delve',
+            role: '',
+            director: 'Nicole Michaelis'
         },  {
-            title: 'Film',
-            character: 'test',
-            director: 'testdir'
+            title: 'Lenovo',
+            role: '',
+            director: 'Michel Leroy'
         }, {
-            title: 'Commercial',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Conservatory Theater, AADA NYC',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Training',
-            character: 'test',
-            director: 'testdir'
-        },  {
-            title: 'Skills',
-            character: 'test',
-            director: 'testdir'
+            title: 'Spread the Jam',
+            role: '',
+            director: ''        
         }];
 
         $scope.aada = [
         {
-            title: 'Stats',
-            character: 'test',
-            director: 'testdir'
+            title: 'Habeas Corpus',
+            character: 'Canon Throbbing',
+            director: 'Bernie Sheredy, Dir'
         },  {
-            title: 'Theater',
-            character: 'test',
-            director: 'testdir'
+            title: 'The Triumph of Love',
+            character: 'Harlequin',
+            director: 'William Koch'
         },  {
-            title: 'Film',
-            character: 'test',
-            director: 'testdir'
+            title: 'Saint Joan',
+            character: 'Charles',
+            director: 'Janis Powell'
         }, {
-            title: 'Commercial',
-            character: 'test',
-            director: 'testdir'
+            title: 'Scenes and revelations',
+            character: 'Dennis',
+            director: 'Barbara Rubin'
         }, {
-            title: 'Conservatory Theater, AADA NYC',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Training',
-            character: 'test',
-            director: 'testdir'
-        },  {
-            title: 'Skills',
-            character: 'test',
-            director: 'testdir'
+            title: 'The Runner Stumbles',
+            character: 'Monsignor',
+            director: 'Todd Peters'        
         }];
 
         $scope.training = [
         {
-            title: 'Stats',
-            character: 'test',
-            director: 'testdir'
+            list: 'The American Academy Of Dramatic Arts, (NYC/Graduate, 2-year Conservatory program)'
         },  {
-            title: 'Theater',
-            character: 'test',
-            director: 'testdir'
+            list: 'Current Bat of the Flea Theater, Jim Simpson - Artistic Dir., Carol Ostrow - Prod. Dir.'
         },  {
-            title: 'Film',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Commercial',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Conservatory Theater, AADA NYC',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Training',
-            character: 'test',
-            director: 'testdir'
+            list: 'BoAr, Oxford Shakespeare Company Tribeca, Ron Song Destro - Artistic Dir.'
         },  {
-            title: 'Skills',
-            character: 'test',
-            director: 'testdir'
+            list: 'Shakespeare, Dynamic of Text - Lecoq Master class - Norman Taylor (Lecoq)'
+        },  {
+            list: 'Movement Theater Studio - Summer Intensive - Norman Taylor (Lecoq)'
+        },  {
+            list: 'The Dramatic World - Summer Intensive - Norman Taylor (Lecoq)'
+        },  {
+            list: 'The Actor\'s workout - Improv & Scene Study - Janis Powell (Meisner & Uta Hagen)'
+        },  {
+            list: 'Imagination, Action and Voice - Richard Crawford & Craig Bacon (Lecoq & Linklater)'
+        },  {
+            list: 'Comedic Performance - Richard Crawford & Virginia Scott'
+        },  {
+            list: 'Le Jeu - Geoff Sobelle & Contemporary Puppetry - Tom Lee'
         }];
 
         $scope.skills = [
         {
-            title: 'Stats',
-            character: 'test',
-            director: 'testdir'
-        },  {
-            title: 'Theater',
-            character: 'test',
-            director: 'testdir'
-        },  {
-            title: 'Film',
-            character: 'test',
-            director: 'testdir'
+            list: 'Dialects & Accents (trained in IPA). Stage make-up. Confident Singer'
         }, {
-            title: 'Commercial',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Conservatory Theater, AADA NYC',
-            character: 'test',
-            director: 'testdir'
-        }, {
-            title: 'Training',
-            character: 'test',
-            director: 'testdir'
+            list: 'Martial Arts; Capoeira, Aikido, Bokkendo, Jodo (short staff), Archery, Horse Archery'
         },  {
-            title: 'Skills',
-            character: 'test',
-            director: 'testdir'
+            list: 'Advanced experiemental Movement: Viewpoints, Lecoq, Eurythmy, Bothmer Gym.'
+        },  {
+            list: 'Stage combat: fencing, Japanese stick fighting, hand-to-hand combat, basic Choreography.'
+        }, {
+            list: 'Drawing & Painting, Surfing, Advanced Driving (manual), Juggling (balls & Clubs).'
+        }, {
+            list: 'I have a driver\'s license, plus US & UK passports'
         }];
 
 
