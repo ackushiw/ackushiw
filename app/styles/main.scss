@@ -17,7 +17,7 @@ h1, h2, h3 ,h4{
 }  
 //Content View
 .content-view{
-    margin-top: 70px;
+    margin-top: 33px;
 }
 .content-background{
     background: $paper;
@@ -41,6 +41,8 @@ h1, h2, h3 ,h4{
 ul.ackw-nav{
     margin-right: 5px;
     padding-right: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
 
     li{
     height: 60px;
@@ -76,8 +78,7 @@ box-shadow:  0 -2px 6px -2px #9b9bcb inset;
     height:5px
 }
 /*Phone*/
-.phone-icons{
-    top:100px;
+.phone-icons{    
     padding: 5px;
 
     li{
@@ -96,6 +97,9 @@ box-shadow:  0 -2px 6px -2px #9b9bcb inset;
     z-index: -100;
     -webkit-box-shadow: -10px -10px 100px 30px rgba(0, 0, 0, 0.7);        
         box-shadow:  -10px -10px 100px 30px rgba(0, 0, 0, 0.7);
+}
+iframe{
+    max-width: 100%;
 }
 /*Browsehappy*/
 .browsehappy {
