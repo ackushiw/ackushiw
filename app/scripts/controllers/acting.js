@@ -148,7 +148,7 @@ angular.module('ackushiwApp')
         }, {
             list: 'Martial Arts; Capoeira, Aikido, Bokkendo, Jodo (short staff), Archery, Horse Archery'
         },  {
-            list: 'Advanced experiemental Movement: Viewpoints, Lecoq, Eurythmy, Bothmer Gym.'
+            list: 'Advanced experimental Movement: Viewpoints, Lecoq, Eurythmy, Bothmer Gym.'
         },  {
             list: 'Stage combat: fencing, Japanese stick fighting, hand-to-hand combat, basic Choreography.'
         }, {
