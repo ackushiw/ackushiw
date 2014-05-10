@@ -7,9 +7,9 @@
                     <img class="img-responsive img-rounded logo" src="images/ackw_logo.png" alt="">
                 </a>
             </li>
-            <li class="v-bottom nav-shadow hidden-xs"><a id="ackw" class="ackw-header" href="#home">Alexander Kushi-Willis</a>
+            <li ui-route="#/" ng-model="current.home" ng-class="{active: current.home}"class="v-bottom nav-shadow hidden-xs"><a id="ackw" class="ackw-header" href="#home">Alexander Kushi-Willis</a>
             </li>
-            <li class="v-bottom nav-shadow"><a class="btn" ng-href="#acting"><b>Acting</b></a>
+            <li ui-route="#/acting" ng-model="current.acting" ng-class="{active: current.acting}" class="v-bottom nav-shadow"><a class="btn" ng-href="#acting"><b>Acting</b></a>
             </li>
         </ul>
 
