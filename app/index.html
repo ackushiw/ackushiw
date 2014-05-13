@@ -24,8 +24,8 @@
 <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="msapplication-TileImage" content="/mstile-144x144.png">
-    <a href="https://plus.google.com/104581303879978801934" rel="publisher">Google+</a>
-    <a href='https://alpha.app.net/ackushiw' rel='me'>...</a>
+    <a class="hidden" href="https://plus.google.com/104581303879978801934" rel="publisher">Google+</a>
+    <a class="hidden" href='https://alpha.app.net/ackushiw' rel='me'>...</a>
 
     <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />   -->  
@@ -87,8 +87,7 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/angularUi/ui-bootstrap-0.9.0.min.js"></script>
-        <script src="scripts/angularUi/ui-bootstrap-tpls-0.9.0.min.js"></script>
+        <script src="bower_components/angular-ui/build/angular-ui.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/navbar.js"></script>
@@ -99,6 +98,7 @@
         <script src="scripts/directives/content-nav.js"></script>
         <script src="scripts/controllers/content-nav.js"></script>
         <script src="scripts/directives/headshot.js"></script>
+        <script src="scripts/services/feed-service.js"></script>
         <!-- endbuild -->
 </body>
 </html>
