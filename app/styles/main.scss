@@ -33,6 +33,20 @@ h1, h2, h3 ,h4{
       background: $paper;  
     }
 }
+//Gallery View
+.gallery ul { 
+
+    margin: 0;
+    padding: 0;
+
+    li{    
+    list-style-type: none;
+    }
+}
+.gallery-padding {
+    padding: 6px;
+}
+
 //Content Nav
 .content-navbar{
     margin-top: 62px;
