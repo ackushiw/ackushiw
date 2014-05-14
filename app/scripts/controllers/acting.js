@@ -2,7 +2,7 @@
 
 angular.module('ackushiwApp')
     .controller('ActingCtrl', function($scope) {
-        $scope.accordion = true;
+        $scope.accordion = true;        
 
         $scope.stats = {
             eyes: 'Dark Hazel',
@@ -155,14 +155,5 @@ angular.module('ackushiwApp')
             list: 'Drawing & Painting, Surfing, Advanced Driving (manual), Juggling (balls & Clubs).'
         }, {
             list: 'I have a driver\'s license, plus US & UK passports'
-        }];
-
-
-
-        $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-        $scope.addItem = function() {
-            var newItemNo = $scope.items.length + 1;
-            $scope.items.push('Item ' + newItemNo);
-        };
+        }];            
     });

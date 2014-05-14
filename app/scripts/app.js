@@ -5,7 +5,8 @@ angular.module('ackushiwApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'ui'
+  'ui',
+  'ui.bootstrap'
   
 ])
   .config(function ($routeProvider) {

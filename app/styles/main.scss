@@ -11,6 +11,20 @@ $primary-color: #98b7ce;
 //backgrounds
 $whitewall: url('../images/whitewall.jpg') no-repeat center center fixed;
 $paper: url('../images/textures/exclusive_paper.png');
+.paper{
+    background: $paper;       
+}
+.gallerybg{
+    background: white;
+}
+.whitewall{
+    background: $whitewall;
+    background-position: top center;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+}
 //fonts
 h1, h2, h3 ,h4{
     font-family: $default-font;
@@ -19,19 +33,11 @@ h1, h2, h3 ,h4{
 .content-view{
     margin-top: 33px;
 }
-.content-background{
-    background: $paper;
-    
-}
+
 .acting-content{
     position:absolute;
     margin-top: 0;
-    background: $paper;
-    width:100%;
-
-    div{
-      background: $paper;  
-    }
+    width:100%;    
 }
 //Gallery View
 .gallery ul { 
@@ -141,12 +147,7 @@ body {
     padding-bottom: 20px;
     width:100%;
     font-family: $default-font;
-    background: $whitewall;
-    background-position: top center;
-  -webkit-background-size: cover !important;
-  -moz-background-size: cover !important;
-  -o-background-size: cover !important;
-  background-size: cover !important;
+    
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
