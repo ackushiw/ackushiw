@@ -1,6 +1,6 @@
 <div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed(event)">    
     <div>
-        <div ng-repeat="feed in feeds | filter:filterText">
+        <div class="tile" ng-repeat="feed in feeds | filter:filterText">
             <div ng-repeat="content in feed.mediaGroups">
                 <ul>
                     <li ng-repeat="content in content.contents">

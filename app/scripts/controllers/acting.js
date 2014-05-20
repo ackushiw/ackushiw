@@ -2,7 +2,9 @@
 
 angular.module('ackushiwApp')
     .controller('ActingCtrl', function($scope, $rootScope) {
-        $rootScope.whitewall = false
+        $rootScope.whitewall = false;
+        $rootScope.acting = true;
+        $rootScope.art = false;
         $scope.accordion = true;        
 
         $scope.stats = {

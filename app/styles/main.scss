@@ -177,13 +177,15 @@ body {
     -webkit-column-gap: 10px;
     column-count: 4;
     column-gap: 10px;
-    //width: 480px; 
-}
+    
 
-    div a{
+
+    div.tile{
         display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
         margin-bottom: 20px;
-        width: 100%; }
+        width: 100%; 
+    }
+}
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
