@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('ackushiwApp')
-    .controller('ActingCtrl', function($scope) {
+    .controller('ActingCtrl', function($scope, $rootScope) {
+        $rootScope.whitewall = false
         $scope.accordion = true;        
 
         $scope.stats = {
