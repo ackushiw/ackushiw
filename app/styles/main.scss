@@ -15,15 +15,18 @@ $paper: url('../images/textures/exclusive_paper.png');
     background: $paper;       
 }
 .gallerybg{
-    background: white;
+    background-color: white;
 }
-.whitewall{
+.whitewall{    
     background: $whitewall;
     background-position: top center;
   -webkit-background-size: cover !important;
   -moz-background-size: cover !important;
   -o-background-size: cover !important;
   background-size: cover !important;
+}
+.main-ackw{
+    height: 1000px;
 }
 //fonts
 h1, h2, h3 ,h4{
@@ -35,9 +38,13 @@ h1, h2, h3 ,h4{
 }
 
 .acting-content{
-    position:absolute;
+    background:none;
     margin-top: 0;
-    width:100%;    
+    width:100%;  
+
+    .panel{
+        background:none;
+    }  
 }
 //Gallery View
 .gallery ul { 
@@ -60,22 +67,34 @@ h1, h2, h3 ,h4{
 //Nav
 ul.ackw-nav{
     margin-right: 5px;
-    padding-right: 5px;
+    padding-right: 5px;    
     margin-top: 0;
     margin-bottom: 0;
 
     li{
-    height: 60px;
+    height: 60px;    
     margin-left: 9px;
     margin-right: 2px;
         a{
-        margin-top: 7px;
+        
+        margin: 0;        
+        height: 100%;
         vertical-align: bottom;
+
+            h3{
+            margin:0;
+            top: 0;    
+            }
+
+            h4{
+                margin:0;
+                padding: 5px;
+            }
         }
     }
 }    
 .logo{
-    height: 42px;
+    height: 60px;
 }
 .logo-a{
     padding:0 !important;
@@ -88,6 +107,7 @@ ul.ackw-nav{
 .social-btn{
     padding:0 !important;
     margin: 5px 5px;
+    top: 7px;
 }
 .nav-shadow:hover{
     -moz-box-shadow: 0 -2px 6px -2px #9b9bcb inset;
@@ -144,11 +164,26 @@ iframe{
 body {
     z-index: -100;
     padding-top: 60px;
-    padding-bottom: 20px;
+    padding-bottom: 0;
     width:100%;
     font-family: $default-font;
     
 }
+//Masonry CSS only
+#gallery>div{
+    -moz-column-count: 4;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 10px;
+    column-count: 4;
+    column-gap: 10px;
+    //width: 480px; 
+}
+
+    div a{
+        display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
+        margin-bottom: 20px;
+        width: 100%; }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,

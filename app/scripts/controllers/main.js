@@ -2,9 +2,5 @@
 
 angular.module('ackushiwApp')
     .controller('MainCtrl', function($scope) {
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+        $scope.hello = 'welcome friend, thanks for visiting and viewing the code'
     });

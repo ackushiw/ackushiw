@@ -6,7 +6,8 @@ angular.module('ackushiwApp', [
   'ngSanitize',
   'ngRoute',
   'ui',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'akoenig.deckgrid'
   
 ])
   .config(function ($routeProvider) {

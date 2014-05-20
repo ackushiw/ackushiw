@@ -39,6 +39,7 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
   (function() {
     var po = document.createElement("script"); po.type = "text/javascript"; po.async = true;
@@ -47,14 +48,14 @@
   })();
 </script>
   </head>
-  <body ng-app="ackushiwApp" ng-class="{whitewall: current.home, paper: current.acting, gallerybg: current.art}">
+  <body ng-app="ackushiwApp" class="whitewall">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     
-    <div class="container-fluid content-view" ng-view="" ng-class="{whitewall: current.home, paper: current.acting, gallerybg: current.art}"></div>
+    <div class="container-fluid content-view" ng-view="" ng-class="{paper: current.acting, gallerybg: current.art}"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -82,6 +83,7 @@
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-deckgrid/angular-deckgrid.js"></script>    
     
     <!-- endbower -->
     <!-- endbuild -->
@@ -102,7 +104,7 @@
         <script src="scripts/directives/headshot.js"></script>
         <script src="scripts/services/feed-service.js"></script>
         <script src="scripts/directives/gallery.js"></script>
-        <script src="scripts/controllers/gallery.js"></script>
+        <script src="scripts/controllers/gallery.js"></script>        
         <!-- endbuild -->
 </body>
 </html>

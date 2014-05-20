@@ -1,13 +1,13 @@
-<div class="gallery" ng-init="loadFeed(event)">
-	<ul ng-controller="GalleryCtrl">
-		<li class="col-sm-3 gallery-padding" ng-repeat="feed in feeds | filter:filterText">            
-            <ul>
-            	<li ng-repeat="content in feed.mediaGroups"><ul>
-            		<li ng-repeat="content in content.contents">
-            			<img class="img-responsive img-thumbnail" ng-src="{{content.url}}" alt="">
-            		</li>
-            	</ul></li>
-            </ul>
-            </li>
-	</ul>
+<div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed(event)">    
+    <div>
+        <div ng-repeat="feed in feeds | filter:filterText">
+            <div ng-repeat="content in feed.mediaGroups">
+                <ul>
+                    <li ng-repeat="content in content.contents">
+                        <img class="img img-thumbnail" ng-src="{{content.url}}" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>

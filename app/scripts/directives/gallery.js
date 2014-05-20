@@ -7,3 +7,4 @@ angular.module('ackushiwApp')
       templateUrl: 'views/gallery.html'   
     };
   });
+  
