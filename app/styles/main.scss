@@ -83,7 +83,8 @@ ul.ackw-nav{
 
             h3{
             margin:0;
-            top: 0;    
+            top: 0; 
+            vertical-align: middle;   
             }
 
             h4{
@@ -92,15 +93,32 @@ ul.ackw-nav{
             }
         }
     }
-}    
+}
+.navbar-left{
+    padding-left: 7px;
+}   
 .logo{
     height: 60px;
-}
-.logo-a{
-    padding:0 !important;
-    margin: 5px 5px;
+    
+    a{
+        padding:0 !important;
+        margin: 5px 5px;
 
+        .logo-img{
+            height:60px;
+        }
+    }
 }
+.phone-nav{
+    position:absolute;
+    top: 5px;
+    right: 0;
+
+    h3{
+        vertical-align: middle;
+    }
+}
+
 .ackw-header{
     font-size: 30px;
 }
@@ -118,11 +136,20 @@ box-shadow:  0 -2px 6px -2px #9b9bcb inset;
     height:5px
 }
 /*Phone*/
-.phone-icons{    
+//Nav-bottom
+.ackw-phone{
+    margin-left: 10px;
+}
+.phone-icons{
+    position: fixed;
+    top: 20px;
+    left: 5px;    
     padding: 5px;
 
     li{
-        margin-top: 12px;
+        margin: 20px;
+        list-style: none;
+
     }
 }
 
@@ -266,6 +293,9 @@ body {
 }
 /* Responsive: small devices */
 @media screen and (max-width: 768px) {
+    body{
+        padding-top: 0;
+    }
     .container-fluid {
         max-width: 100%;        
     }
