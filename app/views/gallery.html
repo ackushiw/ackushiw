@@ -1,18 +1,18 @@
 <div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed(event)">
     <div>
         <div deckgrid class="deckgrid" source="feeds">
-            <div class="a-card">
-                <h1>{{card.title}}</h1>
-                <div ng-init="imagecont=card.mediaGroups">
-                    <div ng-controller="CardCtrl">
-                        <div ng-init="loadImage(imagecont)">
 
-                        </div>
+            <div class="a-card">
+
+
+                <div ng-controller="CardCtrl">
+                    <div ng-init="loadImage(card)">
+                        <img class="img-responsive img-thumbnail" src="" alt="" ng-src="{{imageY}}">
+
                     </div>
                 </div>
-                <p>{{card.mediaGroups.contents}}</p>
 
-                <img src="" data-ng-src="{{card.mediaGroups}}">
+
             </div>
         </div>
 
