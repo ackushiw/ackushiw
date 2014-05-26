@@ -1,6 +1,23 @@
-<div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed(event)">    
+<div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed(event)">
     <div>
-        <div class="tile" ng-repeat="feed in feeds | filter:filterText">
+        <div deckgrid class="deckgrid" source="feeds">
+            <div class="a-card">
+                <h1>{{card.title}}</h1>
+                <div ng-init="imagecont=card.mediaGroups">
+                    <div ng-controller="CardCtrl">
+                        <div ng-init="loadImage(imagecont)">
+
+                        </div>
+                    </div>
+                </div>
+                <p>{{card.mediaGroups.contents}}</p>
+
+                <img src="" data-ng-src="{{card.mediaGroups}}">
+            </div>
+        </div>
+
+
+        <!-- <div class="tile" ng-repeat="feed in feeds | filter:filterText">
             <div ng-repeat="content in feed.mediaGroups">
                 <ul>
                     <li ng-repeat="content in content.contents">
@@ -8,6 +25,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
