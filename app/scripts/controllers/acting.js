@@ -5,7 +5,8 @@ angular.module('ackushiwApp')
         $rootScope.whitewall = false;
         $rootScope.acting = true;
         $rootScope.art = false;
-        $scope.accordion = true;        
+        $rootScope.image = null;
+        $scope.accordion = true;
 
         $scope.stats = {
             eyes: 'Dark Hazel',

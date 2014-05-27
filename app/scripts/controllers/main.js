@@ -5,5 +5,6 @@ angular.module('ackushiwApp')
     	$rootScope.whitewall = true;
     	$rootScope.acting = false;
     	$rootScope.art = false;
+    	$rootScope.image = null;
     	$scope.hello = 'welcome friend, thanks for visiting and viewing the code'
     });
