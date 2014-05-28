@@ -8,6 +8,10 @@ angular.module('ackushiwApp')
   	//source for gallery 
     $scope.feedSrc='https://picasaweb.google.com/data/feed/base/user/115943876575256176275/albumid/5400892258879674817?alt=rss&kind=photo&hl=en_US';
 
+    $scope.nycPhoto = function (){
+      $scope.feedSrc='https://picasaweb.google.com/data/feed/base/user/115943876575256176275/albumid/6017070805979696145?alt=rss&kind=photo&hl=en_US';
+      
+    };
     //close modal
     $rootScope.closeIt = function ($modal) {    	
     	$model.open('closed!');

@@ -24,6 +24,10 @@ angular.module('ackushiwApp', [
         templateUrl: 'views/art.html',
         controller: 'ArtCtrl'
       })
+      .when('/photography', {
+        templateUrl: 'views/photography.html',
+        controller: 'PhotographyCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

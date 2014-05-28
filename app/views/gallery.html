@@ -1,5 +1,6 @@
-<div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed(event)">
+<div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed();">
     <div>
+        <input id="reload" type="submit" ng-value="loadFeed();">reload!</input type="submit">
         <div deckgrid class="deckgrid" source="feeds">
 
             <div class="a-card">
