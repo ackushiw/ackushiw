@@ -1,31 +1,15 @@
 <div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed();">
     <div>
-        <input id="reload" type="submit" ng-value="loadFeed();">reload!</input type="submit">
+        
         <div deckgrid class="deckgrid" source="feeds">
 
             <div class="a-card">
-
-
                 <div ng-controller="CardCtrl">
-                    <div ng-init="loadImage(card)">
-                        <img ng-click="open(imageUrl)" class="img-thumbnail" src="" alt="" ng-src="{{imageUrl}}">
-
+                    <div ng-init="loadImage(card)" class="loader-gif">
+                        <img ng-click="open(imageUrl)" class="img-thumbnail" src="" alt="image/gif/circle-loader.gif" ng-src="{{imageUrl}}">
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-
-        <!-- <div class="tile" ng-repeat="feed in feeds | filter:filterText">
-            <div ng-repeat="content in feed.mediaGroups">
-                <ul>
-                    <li ng-repeat="content in content.contents">
-                        <img class="img img-thumbnail" ng-src="{{content.url}}" alt="">
-                    </li>
-                </ul>
-            </div>
-        </div> -->
     </div>
 </div>
