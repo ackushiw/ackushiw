@@ -2,9 +2,7 @@
 
 angular.module('ackushiwApp')
     .controller('MainCtrl', function($scope, $rootScope) {
-    	$rootScope.whitewall = true;
-    	$rootScope.acting = false;
-    	$rootScope.art = false;
+    	$rootScope.view = 'home';    	
     	$rootScope.image = null;
     	$scope.hello = 'welcome friend, thanks for visiting and viewing the code'
     });
