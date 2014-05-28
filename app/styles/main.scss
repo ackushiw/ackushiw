@@ -40,7 +40,8 @@ h1, h2, h3 ,h4{
 }  
 //Content View
 .content-view{
-    margin-top: 33px;
+    margin-top: 40px;
+    padding-top: 17px;
 }
 
 .acting-content{
@@ -200,7 +201,7 @@ iframe{
 /* Space out content a bit */
 body {
     z-index: -100;
-    padding-top: 60px;
+    padding-top: 65px;
     padding-bottom: 0;
     width:100%;
     height:80%;
@@ -317,6 +318,11 @@ body {
     .social-bar{
         width:100%;
         display: inline-block;
+    }
+
+    .content-view{
+        margin-top: 0;
+        padding-top: 10px;
     }
 
     /* Remove the padding we set earlier */
