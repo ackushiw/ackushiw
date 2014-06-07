@@ -1,20 +1,20 @@
-<nav id="nav-top" class="navbar navbar-default navbar-fixed-top inner_shadow hidden-xs" role="navigation" ng-init="$scope.navRoute = $state">
+<div class="nav-view" ng-controller="NavbarCtrl"><nav id="nav-top" class="navbar navbar-default navbar-fixed-top inner_shadow hidden-xs" role="navigation" ng-init="$scope.navRoute = $state">
     <div class="container-fluid">
         <div class="red-blue-gradient top-line"></div>
         <ul class="nav navbar-nav navbar-left ackw-nav">
-            <li class="logo" ui-route="#/" class="v-middle img-circle">
-                <a ng-href="#/">
+            <li class="logo" ng-cloak>
+                <a ng-click="sidebarToggle(sidebarMenu);">
                     <img class="img-responsive img-rounded logo-img" src="images/ackw_logo.png" alt="logo">
                 </a>
             </li>
-            <li ui-route="#/" ng-model="current.home" ng-class="{active: current.home}" class="v-bottom nav-shadow hidden-xs">
-                <a id="ackw" class="ackw-header" ng-href="#home">
+            <li ng-model="current.home" ng-class="{active: current.home}" class="v-bottom nav-shadow hidden-xs">
+                <a id="ackw" class="ackw-header" ui-sref="alexander">
                     <h3>Alexander Kushi-Willis</h3>
                 </a>
             </li>
-            <li ui-route="#/acting" ng-model="current.acting" ng-class="{active: current.acting}" class="v-bottom nav-shadow"><a class="" ng-href="#/acting"><b><h4>Acting</h4></b></a>
+            <li ng-model="current.acting" ng-class="{active: current.acting}" class="v-bottom nav-shadow"><a class="" ui-sref="acting"><b><h4>Acting</h4></b></a>
             </li>
-            <li ui-route="#/art" ng-model="current.art" ng-class="{active: current.art}" class="v-bottom nav-shadow"><a class="" ng-href="#/art"><b><h4>Art</h4></b></a>
+            <li ng-model="current.art" ng-class="{active: current.art}" class="v-bottom nav-shadow"><a class="" ui-sref="art"><b><h4>Art</h4></b></a>
             </li>
         </ul>      
 
@@ -50,46 +50,21 @@
 
     </div>
 </nav>
+<!--Sliding Side Menu  -->
+<div class="sidemenu"></div>
 
 <nav class="navbar-fixed-top visible-xs"><div class="red-blue-gradient top-line"></div></nav>
-
-
-<nav id="nav-bottom" class="nav navbar navbar-inverse navbar-fixed-bottom visible-xs" role="navigation">
+<nav id="nav-bottom" class="nav navbar navbar-inverse navbar-fixed-bottom visible-xs" role="navigation" ng-swipe-right="sidebarToggle(sidebarMenu);">
     <!-- /.bottom nav -->
     <div class="red-blue-gradient top-line inner-shadow"></div>
     <div class="navbar-inner darkhex">
         <div>
-            <div id="ackw-draw" class="collapse">
-                <ul class="nav navbar-nav nav-pills ackw-phone" id="myTab">                    
-                    <li ui-route="#/acting"><a class="" ng-href="#/acting">Acting</a>
-                    </li>
-                    <li ui-route="#/art"><a class="" ng-href="#/art">Art</a>
-                    </li>
-                    <li ui-route="#/" class="hidden"><a class="" ng-href="#social" data-toggle="tab">Interests</a>
-                    </li>
-                    <li ui-route="#/" class="hidden"><a class="" ng-href="#connect" data-toggle="tab">Social</a>
-                    </li>
-                    <li ui-route="#/" class="hidden"><a class="" ng-href="#ackw1" data-toggle="tab">About</a>
-                    </li>
-                </ul>
-            </div>
-
-
-
             <div id="ackw-bottom"></div>
-            <ul class="nav navbar-nav  col-xs-10">
-                <li ui-route="#/" class="ackw-phone"><a ng-href="#/" class="brand ackw-header">Alexander Kushi-Willis</a>
+            <ul class="nav navbar-nav  col-xs-12">
+                <li class="ackw-phone"><a ng-click="sidebarToggle(sidebarMenu);" class="brand ackw-header" tooltip-placement="top" tooltip="Discover More...">Alexander Kushi-Willis</a>
                 </li>
-            </ul>
-
-
-            <ul class="nav navbar-nav navbar-right draw-btn">
-                <li>
-                    <button type="button" class="btn btn-default btn-info navbar-toggle" data-toggle="collapse" data-target="#ackw-draw">
-                        More
-                    </button>
-                </li>
-            </ul>
+            </ul>            
         </div>
     </div>
 </nav>
+</div>

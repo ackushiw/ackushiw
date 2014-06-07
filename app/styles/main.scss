@@ -160,7 +160,47 @@ box-shadow:  0 -2px 6px -2px #9b9bcb inset;
 
     }
 }
-
+/*Side Menu*/ 
+#sidebar {
+    position: fixed;
+    background: white;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-top: 120px;
+    z-index: 990;
+    -moz-box-shadow:    2px 10px 30px 5px rgba(30, 41, 49, 0.7);
+    -webkit-box-shadow: 2px 10px 30px 5px rgba(30, 41, 49, 0.7);
+    box-shadow:         2px 10px 30px 5px rgba(30, 41, 49, 0.7);
+}
+/*side menu animation */
+.animate-sidemenu {
+    background:white;
+    padding:10px;
+}
+.animate-sidemenu.ng-enter, .animate-sidemenu.ng-leave {
+    -webkit-transition:all ease 0.7s;
+    -moz-transition:all ease 0.7s;
+    -o-transition:all ease 0.7s;
+    transition:all ease 0.7s;
+}
+.animate-sidemenu.ng-enter, .animate-sidemenu.ng-leave.ng-leave-active {
+    max-width: 0;
+    left: -1px;
+    overflow: hidden;
+    transform: translateX(-50px);
+}
+.animate-sidemenu.ng-leave, .animate-sidemenu.ng-enter.ng-enter-active {
+    opacity:1;
+    max-width: 100%;
+    transform: translateX(0);
+}
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
 /*Reel panel*/
 .reel-panel{
     background: #0F1623;
@@ -208,23 +248,6 @@ body {
     height:80%;
     font-family: $default-font;
     
-}
-//Masonry CSS only
-#gallery>div{
-    -moz-column-count: 4;
-    -moz-column-gap: 10px;
-    -webkit-column-count: 4;
-    -webkit-column-gap: 10px;
-    column-count: 4;
-    column-gap: 10px;
-    
-
-
-    div.tile{
-        display: inline-block; /* Display inline-block, and absolutely NO FLOATS! */
-        margin-bottom: 20px;
-        width: 100%; 
-    }
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

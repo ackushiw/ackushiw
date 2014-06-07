@@ -6,18 +6,18 @@ the aim is to have a nav that changed on the content of the page and be dynamic
         <!-- Acting Content Nav -->
         <div ng-switch-when="acting">
             <div class="navbar-header">
-                <a class="navbar-brand" ng-href="/#acting">Acting</a>
+                <a class="navbar-brand" ui-sref="acting">Acting</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div>
                 <ul class="nav navbar-nav navbar-left ackw-nav">
 
-                    <li ui-route="#/acting"><a id="ackw" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" ng-href="#/acting">Headshot</a>
+                    <li ui-route="#/acting"><a id="ackw" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" ui-sref="acting">Headshot</a>
                     </li>
-                    <li ui-route="#/photography" ng-class="{active: contentnav.acting}"><a ng-href="#/acting"><b>Resume</b></a>
+                    <li ui-route="#/photography" ng-class="{active: contentnav.acting}"><a ui-sref="acting"><b>Resume</b></a>
                     </li>
-                    <li ui-route="#/photography" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" class="hidden"><a ng-href="#/acting"><b>Reel</b></a>
+                    <li ui-route="#/photography" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" class="hidden"><a ui-sref="acting"><b>Reel</b></a>
                     </li>
                 </ul>
             </div>
@@ -25,7 +25,7 @@ the aim is to have a nav that changed on the content of the page and be dynamic
         <!-- Art Content Nav -->
         <div ng-switch-when="art">
             <div class="navbar-header">
-                <a class="navbar-brand" ng-href="/#art">Art</a>
+                <a class="navbar-brand" ui-sref="art">Art</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,9 +34,9 @@ the aim is to have a nav that changed on the content of the page and be dynamic
 
                     <li ui-route="#/art" ng-model="contentnav.art" ng-class="{active: contentnav.art}"><a id="ackw" class="" href="#/art">Painting</a>
                     </li>
-                    <li ui-route="#/photography" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" ><a ng-href="#/photography"><b>Photography</b></a>
+                    <li ui-route="#/photography" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" ><a ui-sref="art.photography"><b>Photography</b></a>
                     </li>
-                    <li ui-route="#/photography" ng-model="contentnav.test" ng-class="{active: contentnav.test}" class="v-bottom nav-shadow" class="hidden"><a ng-href="#/art"><b>Art</b></a>
+                    <li ui-route="#/photography" ng-model="contentnav.test" ng-class="{active: contentnav.test}" class="hidden"><a ui-sref="art"><b>Art</b></a>
                     </li>                    
                 </ul>
             </div>
@@ -44,7 +44,7 @@ the aim is to have a nav that changed on the content of the page and be dynamic
         <!-- Photography Content Nav -->
         <div ng-switch-when="photography">
             <div class="navbar-header">
-                <a class="navbar-brand" ng-href="/#art">Art</a>
+                <a class="navbar-brand" ui-sref="art">Art</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -52,9 +52,9 @@ the aim is to have a nav that changed on the content of the page and be dynamic
                 <ul class="nav navbar-nav navbar-left ackw-nav">
                     <li ui-route="#/art" ng-model="contentnav.art" ng-class="{active: contentnav.art}"><a id="ackw" class="" href="#/art">Painting</a>
                     </li>
-                    <li ui-route="#/photography" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" ><a ng-href="#/photography"><b>Photography</b></a>
+                    <li ui-route="#/photography" ng-model="contentnav.acting" ng-class="{active: contentnav.acting}" ><a ui-sref="#/photography"><b>Photography</b></a>
                     </li>
-                    <li ui-route="#/art" ng-model="contentnav.test" ng-class="{active: contentnav.test}" class="hidden"><a ng-href="#/"><b>Art</b></a>
+                    <li ui-route="#/art" ng-model="contentnav.test" class="hidden" ng-class="{active: contentnav.test}" ><a ui-sref="#/"><b>Art</b></a>
                     </li>                    
                 </ul>
             </div>

@@ -6,7 +6,7 @@
             <div class="a-card">
                 <div ng-controller="CardCtrl">
                     <div ng-init="loadImage(card)" class="loader-gif">
-                        <img ng-click="open(imageUrl)" class="img-thumbnail" src="" alt="image/gif/circle-loader.gif" ng-src="{{imageUrl}}">
+                        <img ng-click="expandImage(animateImage)" class="img-responsive" ng-class="{'img-thumbnail': !animateImage, 'expand-img': animateImage}" src="" alt="image/gif/circle-loader.gif" ng-src="{{imageUrl}}">
                     </div>
                 </div>
             </div>
