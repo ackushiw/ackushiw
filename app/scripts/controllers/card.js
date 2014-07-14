@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ackushiwApp')
-  .controller('CardCtrl', function($scope, $modal, $rootScope) {
+  .controller('CardCtrl', function($scope, $state, $rootScope) {
     $scope.animateImage = false;
     $scope.loadImage = function(card) {
       $scope.imageUrl = card;
@@ -19,11 +19,7 @@ angular.module('ackushiwApp')
     //Modal
     $scope.open = function(imageUrl) {
       $rootScope.image = imageUrl;
-      $modal.open({
-        size: 'lg',
-        templateUrl: 'views/modal.html'
-
-      });
+      $state.go('art.modal');
     };
 
   });

@@ -34,5 +34,15 @@ angular.module('ackushiwApp', [
         url: '/photography',
         templateUrl: 'views/photography.html',
         controller: 'PhotographyCtrl'
+      })
+      .state('art.modal', {
+        url: '',
+        onEnter: function($stateParams, $modal) {
+          $modal.open({
+            templateUrl: 'views/modal.html',
+            controller: 'ModalCtrl',
+            backdrop: 'static'
+          });
+        }
       });
   });

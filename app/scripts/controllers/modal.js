@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('ackushiwApp')
-  .controller('ModalCtrl', function($scope, $modal) {
-
+  .controller('ModalCtrl', function($scope, $modalInstance, $state) {
     $scope.cancel = function() {
-      $modalInstance.open('cancel');
+      $modalInstance.dismiss('cancel');
+      $state.go('art');
     };
   });
