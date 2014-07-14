@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('ackushiwApp')
-  .controller('ArtCtrl', function($scope, $rootScope, $modal) {
+  .controller('ArtCtrl', function($scope, $rootScope) {
     //background set
     $rootScope.view = 'art';
 
@@ -10,6 +10,6 @@ angular.module('ackushiwApp')
 
     //close modal
     $rootScope.closeIt = function($modal) {
-      $model.open('closed!');
+      $modal.open('closed!');
     };
   });

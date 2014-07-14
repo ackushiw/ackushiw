@@ -9,11 +9,11 @@ angular.module('ackushiwApp', [
     'ui.router',
     'akoenig.deckgrid',
     'ngTouch',
-    'ngAnimate'
+    //'ngAnimate'
 
   ])
   .config(function($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise("/alexander");
+    $urlRouterProvider.otherwise('/alexander');
     $stateProvider
       .state('alexander', {
         url: '/alexander',
@@ -34,5 +34,5 @@ angular.module('ackushiwApp', [
         url: '/photography',
         templateUrl: 'views/photography.html',
         controller: 'PhotographyCtrl'
-      })
+      });
   });

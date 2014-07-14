@@ -12,7 +12,7 @@ angular.module('ackushiwApp')
 
     //Image Expand
     $scope.expandImage = function(imgClass) {
-      if (imgClass == false) {
+      if (imgClass === false) {
         $scope.animateImage = true;
       } else {
         $scope.animateImage = false;
