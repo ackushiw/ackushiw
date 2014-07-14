@@ -1,10 +1,9 @@
 <div class="panel">
     <div>
-        <accordion close-others="accordion">
+        <accordion close-others="true">
             <accordion-group is-open="true">
                 <accordion-heading>
                     <h3>Alexander Kushi-Willis</h3>
-                    
                 </accordion-heading>
                 <div class="table-responsive">
                     <table class="table table-hover">
@@ -20,9 +19,7 @@
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen2">
-                <accordion-heading>
-                    Theater
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen2, 'glyphicon-chevron-right': !isopen2}"></i>
+                <accordion-heading>Theater <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen2, 'glyphicon-chevron-right': !isopen2}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -35,9 +32,7 @@
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen3">
-                <accordion-heading>
-                    Film
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen3, 'glyphicon-chevron-right': !isopen3}"></i>
+                <accordion-heading>Film <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen3, 'glyphicon-chevron-right': !isopen3}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -50,9 +45,7 @@
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen4">
-                <accordion-heading>
-                    Commercial
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen4, 'glyphicon-chevron-right': !isopen4}"></i>
+                <accordion-heading>Commercial <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen4, 'glyphicon-chevron-right': !isopen4}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -65,9 +58,7 @@
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen5">
-                <accordion-heading>
-                    Conservatory Theater, AADA NYC
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen5, 'glyphicon-chevron-right': !isopen5}"></i>
+                <accordion-heading>Conservatory Theater, AADA NYC <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen5, 'glyphicon-chevron-right': !isopen5}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
                     <table class="table table-striped">
@@ -80,30 +71,23 @@
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen6">
-                <accordion-heading>
-                    Training
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen6, 'glyphicon-chevron-right': !isopen6}"></i>
+                <accordion-heading>Training <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen6, 'glyphicon-chevron-right': !isopen6}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
-                    
-                        <ul ng-repeat="class in training">
-                            <li>{{class.list}}</li>
-                        </ul>
-                    
+                    <ul ng-repeat="class in training">
+                        <li>{{class.list}}</li>
+                    </ul>
                 </div>
             </accordion-group>
             <accordion-group is-open="isopen7">
-                <accordion-heading>
-                    Skills
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen7, 'glyphicon-chevron-right': !isopen7}"></i>
+                <accordion-heading>Skills <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen7, 'glyphicon-chevron-right': !isopen7}"></i>
                 </accordion-heading>
-
                 <div>
                     <ul ng-repeat="skill in skills">
                         <li>{{skill.list}}</li>
                     </ul>
                 </div>
-            </accordion-group>            
+            </accordion-group>
         </accordion>
     </div>
 </div>

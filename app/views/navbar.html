@@ -1,70 +1,68 @@
-<div class="nav-view" ng-controller="NavbarCtrl"><nav id="nav-top" class="navbar navbar-default navbar-fixed-top inner_shadow hidden-xs" role="navigation" ng-init="$scope.navRoute = $state">
-    <div class="container-fluid">
+<div class="nav-view" ng-controller="NavbarCtrl">
+    <nav id="nav-top" class="navbar navbar-default navbar-fixed-top inner_shadow hidden-xs" role="navigation" ng-init="$scope.navRoute = $state">
         <div class="red-blue-gradient top-line"></div>
-        <ul class="nav navbar-nav navbar-left ackw-nav">
-            <li class="logo" ng-cloak>
-                <a ng-click="sidebarToggle(sidebarMenu);">
-                    <img class="img-responsive img-rounded logo-img" src="images/ackw_logo.png" alt="logo">
-                </a>
-            </li>
-            <li ng-model="current.home" ng-class="{active: current.home}" class="v-bottom nav-shadow hidden-xs">
-                <a id="ackw" class="ackw-header" ui-sref="alexander">
-                    <h3>Alexander Kushi-Willis</h3>
-                </a>
-            </li>
-            <li ng-model="current.acting" ng-class="{active: current.acting}" class="v-bottom nav-shadow"><a class="" ui-sref="acting"><b><h4>Acting</h4></b></a>
-            </li>
-            <li ng-model="current.art" ng-class="{active: current.art}" class="v-bottom nav-shadow"><a class="" ui-sref="art"><b><h4>Art</h4></b></a>
-            </li>
-        </ul>      
-
-        <ul class="nav navbar-nav navbar-right social-bar list-inline hidden-sm hidden-xs ackw-nav">
-
-            <li>
-                <a href="https://plus.google.com/u/0/115943876575256176275" class="googleplus social-btn">
-                    <img class="img-thumbnail img-responsive img-circle" src="images/icon/google.png" alt="Google+">
-                </a>
-            </li>
-            <li>
-                <a href="http://www.instagram.com/ackushiw" class="instagram social-btn">
-                    <img class="img-thumbnail img-responsive img-circle" src="images/icon/instagram.png" alt="Instagram">
-                </a>
-            </li>
-            <li>
-                <a href="http://www.facebook.com/ackushiw" class="facebook social-btn">
-                    <img class="img-thumbnail img-responsive img-circle" src="images/icon/facebook.png" alt="Facebook">
-                </a>
-            </li>
-            <li>
-                <a href="http://www.linkedin.com/pub/alexander-kushi-willis/27/205/6a6" class="linkedin social-btn">
-                    <img class="img-thumbnail img-responsive img-circle" src="images/icon/linkedin.png" alt="LinkedIn">
-                </a>
-            </li>
-            <li>
-                <a href="http://www.twitter.com/ackushiw" class="twitter social-btn">
-                    <img class="img-thumbnail img-responsive img-circle" src="images/icon/twitter.png" alt="Twitter">
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-</nav>
-<!--Sliding Side Menu  -->
-<div class="sidemenu"></div>
-
-<nav class="navbar-fixed-top visible-xs"><div class="red-blue-gradient top-line"></div></nav>
-<nav id="nav-bottom" class="nav navbar navbar-inverse navbar-fixed-bottom visible-xs" role="navigation" ng-swipe-right="sidebarToggle(sidebarMenu);">
-    <!-- /.bottom nav -->
-    <div class="red-blue-gradient top-line inner-shadow"></div>
-    <div class="navbar-inner darkhex">
-        <div>
-            <div id="ackw-bottom"></div>
-            <ul class="nav navbar-nav  col-xs-12">
-                <li class="ackw-phone"><a ng-click="sidebarToggle(sidebarMenu);" class="brand ackw-header" tooltip-placement="top" tooltip="Discover More...">Alexander Kushi-Willis</a>
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-left ackw-nav">
+                <li class="logo" ng-cloak>
+                    <a ng-click="sidebarToggle(sidebarMenu);">
+                        <img class="img-responsive img-rounded logo-img" src="images/ackw_logo.png" alt="logo">
+                    </a>
                 </li>
-            </ul>            
+                <li ng-model="current.home" ng-class="{active: current.home}" class="v-bottom nav-shadow hidden-xs">
+                    <a id="ackw" class="ackw-header" ui-sref="alexander">
+                        <h3>Alexander Kushi-Willis</h3>
+                    </a>
+                </li>
+                <li ng-model="current.acting" ng-class="{active: current.acting}" class="v-bottom nav-shadow"><a class="" ui-sref="acting"><b><h4>Acting</h4></b></a>
+                </li>
+                <li ng-model="current.art" ng-class="{active: current.art}" class="v-bottom nav-shadow"><a class="" ui-sref="art"><b><h4>Art</h4></b></a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right social-bar list-inline hidden-sm hidden-xs ackw-nav">
+                <li>
+                    <a href="https://plus.google.com/u/0/115943876575256176275" class="googleplus social-btn">
+                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/google.png" alt="Google+">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.instagram.com/ackushiw" class="instagram social-btn">
+                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/instagram.png" alt="Instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.facebook.com/ackushiw" class="facebook social-btn">
+                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/facebook.png" alt="Facebook">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.linkedin.com/pub/alexander-kushi-willis/27/205/6a6" class="linkedin social-btn">
+                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/linkedin.png" alt="LinkedIn">
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.twitter.com/ackushiw" class="twitter social-btn">
+                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/twitter.png" alt="Twitter">
+                    </a>
+                </li>
+            </ul>
         </div>
-    </div>
-</nav>
+    </nav>
+    <!--Sliding Side Menu  -->
+    <div class="sidemenu"></div>
+    <nav class="navbar-fixed-top visible-xs">
+        <div class="red-blue-gradient top-line"></div>
+    </nav>
+    <nav id="nav-bottom" class="nav navbar navbar-inverse navbar-fixed-bottom visible-xs" role="navigation" ng-swipe-right="sidebarToggle(sidebarMenu);">
+        <!-- /.bottom nav -->
+        <div class="red-blue-gradient top-line inner-shadow"></div>
+        <div class="navbar-inner darkhex">
+            <div>
+                <div id="ackw-bottom"></div>
+                <ul class="nav navbar-nav  col-xs-12">
+                    <li class="ackw-phone"><a ng-click="sidebarToggle(sidebarMenu);" class="brand ackw-header" tooltip-placement="top" tooltip="Discover More...">Alexander Kushi-Willis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>

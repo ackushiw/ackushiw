@@ -9,7 +9,7 @@ angular.module('ackushiwApp', [
     'ui.router',
     'akoenig.deckgrid',
     'ngTouch',
-    //'ngAnimate'
+    'ngAnimate'
 
   ])
   .config(function($stateProvider, $urlRouterProvider) {

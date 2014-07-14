@@ -10,10 +10,10 @@ angular.module('ackushiwApp')
           var log = []
           angular.forEach(feed, function(value, key) {
             var url = value.mediaGroups[0].contents[0].url;
-            console.log(url);
+            //console.log(url);
             this.push(url);
           }, log);
-          console.log(log);
+          //console.log(log);
           $scope.feedJson = log;
           return log;
         });

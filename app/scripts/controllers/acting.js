@@ -4,7 +4,7 @@ angular.module('ackushiwApp')
   .controller('ActingCtrl', function($scope, $rootScope) {
     $rootScope.view = 'acting';
     $rootScope.image = null;
-    $scope.accordion = true;
+    //$scope.accordion = true;
 
     $scope.stats = {
       eyes: 'Dark Hazel',
