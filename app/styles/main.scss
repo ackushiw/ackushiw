@@ -238,6 +238,9 @@ body {
         margin-bottom: 20px;
         width: 100%;
     }
+    div.tile-expand {
+        width: 400%;
+    }
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 
@@ -516,8 +519,9 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    max-height: 100%;
-    max-width: 100%;
+    width: 200%;
+    height: auto;
+    translateX: 500;
 }
 .expand-image-remove.expand-image-remove-active {
     position: relative;
@@ -525,4 +529,6 @@ body {
     left: 0;
     max-height: 100%;
     max-width: 100%;
+    translateX: 0;
+    translateY: 0;
 }
