@@ -1,12 +1,10 @@
 <div id="gallery" class="gallery gallerybg" ng-controller="GalleryCtrl" ng-init="loadFeed();">
     <div>
-        
-        <div deckgrid class="deckgrid" source="feeds">
-
+        <div deckgrid class="deckgrid" source="feedJson">
             <div class="a-card" ng-class="{'expand-img': animateImage}">
                 <div ng-controller="CardCtrl">
                     <div ng-init="loadImage(card)" class="loader-gif">
-                        <img ng-click="open(imageUrl);" class="img-responsive" ng-class="{'img-thumbnail': !animateImage, 'expand-img': animateImage}" src="" alt="image/gif/circle-loader.gif" ng-src="{{imageUrl}}">
+                        <img ng-click="open(imageUrl);" class="img-responsive" ng-class="{'img-thumbnail': !animateImage, 'expand-img': animateImage}" src="" alt="image/gif/circle-loader.gif" ng-src="{{card}}">
                     </div>
                 </div>
             </div>

@@ -4,10 +4,7 @@ angular.module('ackushiwApp')
   .controller('CardCtrl', function($scope, $modal, $rootScope) {
     $scope.animateImage = false;
     $scope.loadImage = function(card) {
-      var imageX = card.mediaGroups[0];
-      var imageXX = imageX.contents;
-      var imageR = imageXX[0];
-      $scope.imageUrl = imageR.url;
+      $scope.imageUrl = card;
     };
 
     //Image Expand
