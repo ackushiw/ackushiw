@@ -1,19 +1,18 @@
 'use strict';
 
 angular.module('ackushiwApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  //'ngRoute',
-  'ui',
-  'ui.bootstrap',
-  'ui.router',
-  'akoenig.deckgrid',
-  'ngTouch',
-  'ngAnimate'
-  
-])
-  .config(function ($stateProvider, $urlRouterProvider) {
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ui',
+    'ui.bootstrap',
+    'ui.router',
+    'akoenig.deckgrid',
+    'ngTouch',
+    'ngAnimate'
+
+  ])
+  .config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/alexander");
     $stateProvider
       .state('alexander', {
@@ -35,5 +34,5 @@ angular.module('ackushiwApp', [
         url: '/photography',
         templateUrl: 'views/photography.html',
         controller: 'PhotographyCtrl'
-      })      
+      })
   });
