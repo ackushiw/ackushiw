@@ -2,7 +2,7 @@
     <nav id="nav-top" class="navbar navbar-default navbar-fixed-top inner_shadow hidden-xs" role="navigation" ng-init="$scope.navRoute = $state">
         <div class="red-blue-gradient top-line"></div>
         <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left ackw-nav">
+            <ul class="nav navbar-nav navbar-left ackw-nav" hidden>
                 <li class="logo" ng-cloak>
                     <a ng-click="sidebarToggle(sidebarMenu);">
                         <img class="img-responsive img-rounded logo-img" src="images/ackw_logo.png" alt="logo">
@@ -17,8 +17,54 @@
                 </li>
                 <li ng-model="current.art" ng-class="{active: current.art}" class="v-bottom nav-shadow"><a class="" ui-sref="art"><b><h4>Art</h4></b></a>
                 </li>
+                <li layout="horizontal" layout-align="start
+ end"></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right social-bar list-inline hidden-sm hidden-xs ackw-nav">
+            <div layout="horizontal" layout-fill layout-align="start end">
+                <material-button class="logo-holder" ng-click="sidebarToggle(sidebarMenu);">
+                    <img class="img-responsive" src="images/ackw_logo.png" alt="logo">
+                </material-button>
+                <material-tabs>
+                    <material-tab id="ackw" class="ackw-header" ui-sref="alexander" inline-block>
+                        <h3>Alexander Kushi-Willis</h3>
+                    </material-tab>
+                    <material-tab ui-sref="acting"><h4>Acting</h4></material-tab>
+                    <material-tab ui-sref="art"><h4>Art</h4></material-tab>
+                </material-tabs>
+                <section layout="horizontal" layout-align="space-around" layout-padding flex="20">
+                    <div class="material-button-group">
+                        <material-button flex>
+                            <a href="https://plus.google.com/u/0/115943876575256176275" class="googleplus social-btn">
+                                <i class="fa fa-google-plus fa-lg"></i>
+                            </a>
+                        </material-button>
+                        <material-button flex>
+                            <a href="http://www.instagram.com/ackushiw" class="instagram social-btn">
+                                <i class="fa fa-instagram fa-lg"></i>
+                            </a>
+                        </material-button>
+                        <material-button flex>
+                            <a href="http://www.facebook.com/ackushiw" class="facebook social-btn">
+                                <i class="fa fa-facebook fa-lg"></i>
+                            </a>
+                        </material-button>
+                        <material-button flex>
+                            <a href="http://www.linkedin.com/pub/alexander-kushi-willis/27/205/6a6" class="linkedin social-btn">
+                                <i class="fa fa-linkedin fa-lg"></i>
+                            </a>
+                        </material-button>
+                        <material-button flex>
+                            <a href="http://www.twitter.com/ackushiw">
+                                <i class="fa fa-twitter fa-lg"></i>
+                            </a>
+                        </material-button>
+                    </div>
+                </section>
+            </div>
+
+
+
+            <ul class="hidden nav navbar-nav navbar-right social-bar list-inline hidden-sm hidden-xs ackw-nav">
                 <li>
                     <a href="https://plus.google.com/u/0/115943876575256176275" class="googleplus social-btn">
                         <img class="img-thumbnail img-responsive img-circle" src="images/icon/google.png" alt="Google+">

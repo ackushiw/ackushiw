@@ -2,6 +2,7 @@
 
 angular.module('ackushiwApp', [
     'ngCookies',
+    'ngMaterial',
     'ngResource',
     'ngSanitize',
     'ui',

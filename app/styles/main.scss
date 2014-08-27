@@ -68,6 +68,24 @@ h1, h2, h3, h4 {
     margin-top: 62px;
 }
 //Nav
+#nav-top{
+    material-button.logo-holder{
+        width:90px;        
+    }
+    material-tabs{
+        position:relative;
+        bottom:0;
+        color:black;
+        img{
+            height:60px;
+        }
+        h3{
+            margin:0;
+        }
+        material-tab-label.active {
+            color: SlateBlue;
+        }        
+    }
 ul.ackw-nav {
     margin-right: 5px;
     padding-right: 5px;
@@ -92,6 +110,7 @@ ul.ackw-nav {
             }
         }
     }
+}
 }
 .navbar-left {
     padding-left: 7px;
@@ -226,12 +245,12 @@ body {
 }
 //Masonry CSS only
 #gallery>div {
-    -moz-column-count: 4;
-    -moz-column-gap: 10px;
-    -webkit-column-count: 4;
-    -webkit-column-gap: 10px;
-    column-count: 4;
-    column-gap: 10px;
+    -moz-column-count: 2;
+    -moz-column-gap: 5px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 5px;
+    column-count: 2;
+    column-gap: 5px;
     div.tile {
         display: inline-block;
         /* Display inline-block, and absolutely NO FLOATS! */
@@ -311,6 +330,23 @@ body {
     .jumbotron {
         border-bottom: 0;
     }
+    #gallery>div {
+    -moz-column-count: 4;
+    -moz-column-gap: 10px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 10px;
+    column-count: 4;
+    column-gap: 10px;
+    div.tile {
+        display: inline-block;
+        /* Display inline-block, and absolutely NO FLOATS! */
+        margin-bottom: 20px;
+        width: 100%;
+    }
+    div.tile-expand {
+        width: 400%;
+    }
+}
 }
 /* Responsive: small devices */
 
@@ -508,6 +544,7 @@ body {
     }
 }
 /*Gallery Styles*/
+
 
 .expand-image-add, .expand-image-remove {
     -webkit-transition: all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
