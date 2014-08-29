@@ -572,3 +572,15 @@ body {
     translateX: 0;
     translateY: 0;
 }
+/* Material Edits */
+material-tabs{
+  .tabs-header{
+    background-color: transparent;
+  }
+  .tabs-header-items{
+    background-color: transparent; 
+  }
+  h4{
+    color:black;
+  }
+}
