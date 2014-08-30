@@ -78,12 +78,12 @@ h1, h2, h3, h4 {
         color: black;
         img {
             height: 60px;
-        }
-        h3 {
-            margin: 0;
-        }
+        }        
         material-tab#ackw {
             min-width: 370px;
+            h4{
+                font-size: 110%;
+            }
         }
         material-tab-label.active {
             color: rgba(203, 155, 155, 0.5);
@@ -100,31 +100,7 @@ h1, h2, h3, h4 {
             color: red;
         }
     }
-    ul.ackw-nav {
-        margin-right: 5px;
-        padding-right: 5px;
-        margin-top: 0;
-        margin-bottom: 0;
-        li {
-            height: 60px;
-            margin-left: 9px;
-            margin-right: 2px;
-            a {
-                margin: 0;
-                height: 100%;
-                vertical-align: bottom;
-                h3 {
-                    margin: 0;
-                    top: 0;
-                    vertical-align: middle;
-                }
-                h4 {
-                    margin: 0;
-                    padding: 5px;
-                }
-            }
-        }
-    }
+    
 }
 .navbar-left {
     padding-left: 7px;

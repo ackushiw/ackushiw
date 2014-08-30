@@ -1,37 +1,19 @@
 <div class="nav-view" ng-controller="NavbarCtrl">
     <nav id="nav-top" class="navbar navbar-default navbar-fixed-top inner_shadow hidden-xs" role="navigation" ng-init="$scope.navRoute = $state">
         <div class="red-blue-gradient top-line"></div>
-        <div class="container-fluid">
-            <ul class="nav navbar-nav navbar-left ackw-nav" hidden>
-                <li class="logo" ng-cloak>
-                    <a ng-click="sidebarToggle(sidebarMenu);">
-                        <img class="img-responsive img-rounded logo-img" src="images/ackw_logo.png" alt="logo">
-                    </a>
-                </li>
-                <li ng-model="current.home" ng-class="{active: current.home}" class="v-bottom nav-shadow hidden-xs">
-                    <a id="ackw" class="ackw-header" ui-sref="alexander">
-                        <h3>Alexander Kushi-Willis</h3>
-                    </a>
-                </li>
-                <li ng-model="current.acting" ng-class="{active: current.acting}" class="v-bottom nav-shadow"><a class="" ui-sref="acting"><b><h4>Acting</h4></b></a>
-                </li>
-                <li ng-model="current.art" ng-class="{active: current.art}" class="v-bottom nav-shadow"><a class="" ui-sref="art"><b><h4>Art</h4></b></a>
-                </li>
-                <li layout="horizontal" layout-align="start
- end"></li>
-            </ul>
+        <div class="container-fluid">            
             <div layout="horizontal" layout-fill layout-align="start end">
                 <material-button class="logo-holder" ng-click="sidebarToggle(sidebarMenu);">
                     <img class="img-responsive" src="images/ackw_logo.png" alt="logo">
                 </material-button>
-                <material-tabs align-tabs="bottom" nostretch>
-                    <material-tab id="ackw" class="ackw-header" ui-sref="alexander" inline-block>
-                        <h3>Alexander Kushi-Willis</h3>
+                <material-tabs align-tabs="bottom" flex>
+                    <material-tab flex="50" id="ackw" class="ackw-header" ui-sref="alexander">
+                        <h4>Alexander Kushi-Willis</h4>
                     </material-tab>
-                    <material-tab ui-sref="acting">
+                    <material-tab flex ui-sref="acting">
                         <h4>Acting</h4>
                     </material-tab>
-                    <material-tab ui-sref="art">
+                    <material-tab flex ui-sref="art">
                         <h4>Art</h4>
                     </material-tab>
                 </material-tabs>
@@ -54,37 +36,7 @@
                         </material-button>
                     </div>
                 </section>
-            </div>
-
-
-
-            <ul class="hidden nav navbar-nav navbar-right social-bar list-inline hidden-sm hidden-xs ackw-nav">
-                <li>
-                    <a href="https://plus.google.com/u/0/115943876575256176275" class="googleplus social-btn">
-                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/google.png" alt="Google+">
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.instagram.com/ackushiw" class="instagram social-btn">
-                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/instagram.png" alt="Instagram">
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.facebook.com/ackushiw" class="facebook social-btn">
-                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/facebook.png" alt="Facebook">
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.linkedin.com/pub/alexander-kushi-willis/27/205/6a6" class="linkedin social-btn">
-                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/linkedin.png" alt="LinkedIn">
-                    </a>
-                </li>
-                <li>
-                    <a href="http://www.twitter.com/ackushiw" class="twitter social-btn">
-                        <img class="img-thumbnail img-responsive img-circle" src="images/icon/twitter.png" alt="Twitter">
-                    </a>
-                </li>
-            </ul>
+            </div>            
         </div>
     </nav>
     <!--Sliding Side Menu  -->
