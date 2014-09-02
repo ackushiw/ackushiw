@@ -126,14 +126,20 @@ h1, h2, h3, h4 {
 .content-navbar {
   margin-top: 62px;
 }
-//Nav
+//Nav ******************************
 #nav-top {
   .container-fluid {
-    height: 78px;
+    height: 60px;
   }
   material-button.logo-holder {
-    width: 76px;
+    width: 60px;
     border-radius: 0;
+    a{
+        outline: none;
+    }
+    .material-ink-ripple {
+      color: rgb(155, 155, 203);
+    }
   }
   .logo-holder:hover {
     background-color: rgba(203, 155, 155, 0.1);
@@ -142,32 +148,33 @@ h1, h2, h3, h4 {
     position: relative;
     bottom: 0;
     img {
-      height: 76px;
+      height: 60px;
     }
     material-tab {
       margin: 0;
+      padding-bottom: 0;
       material-tab-label {
         h3, h4, h5, h6 {
           padding-bottom: 0;
-          margin-bottom: 2px;
+          margin-bottom: 4px;
           color: rgba(130, 186, 228, 0.8);
         }
-      }
-      material-tab-label.active {
-        h3, h4, h5, h6 {
-          color: rgba(203, 155, 155, 0.9);
-        }
-      }
+      }      
     }
     material-tab#ackw {
       min-width: 370px;
     }
+    material-tab.active {
+        h3, h4, h5, h6 {
+          color: rgba(203, 155, 155, 0.9);
+        }
+      }
     material-tab:hover {
       background-color: rgba(203, 155, 155, 0.1);
     }
   }
   .material-button-group {
-    height: 76px;
+    height: 60px;
     material-button {
       border-radius: 0;
       display: block;
@@ -265,16 +272,31 @@ h1, h2, h3, h4 {
 
 //Nav-bottom
 #nav-bottom {
+    .navbar-inner{
+        height:50px;
+    }
   .ackw-phone-menu {
     margin-left: 10px;
     img {
       height: 20px;
     }
   }
-  material-button {    
+  material-button {
+    border-radius: 0;   
+    h6 {
+      color: rgba(130, 186, 228, 0.9);
+    }
+    .material-ink-ripple {
+      color: rgb(155, 155, 203);
+    }
+  }
+  material-button.active {
     h6 {
       color: rgba(203, 155, 155, 0.9);
     }
+  }
+  material-button:hover{
+    background-color: rgba(130, 186, 228, 0.1);
   }
 }
 .phone-icons {
@@ -285,7 +307,6 @@ h1, h2, h3, h4 {
   li {
     margin: 20px;
     list-style: none;
-    display: inline;
   }
 }
 /*Side Menu*/

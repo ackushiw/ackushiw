@@ -7,13 +7,13 @@
                     <img class="img-responsive" src="images/ackw_logo.png" alt="logo">
                 </material-button>
                 <material-tabs align-tabs="bottom" flex>
-                    <material-tab flex="50" id="ackw" class="ackw-header" ui-sref="alexander">
-                        <h4 class=".mat-display2">Alexander Kushi-Willis</h4>
+                    <material-tab flex="50" id="ackw" class="ackw-header" ui-sref="alexander" ui-sref-active="active">
+                        <h4>Alexander Kushi-Willis</h4>
                     </material-tab>
-                    <material-tab flex ui-sref="acting">
+                    <material-tab flex ui-sref="acting" ui-sref-active="active">
                         <h5>Acting</h5>
                     </material-tab>
-                    <material-tab flex ui-sref="art">
+                    <material-tab flex ui-sref="art" ui-sref-active="active">
                         <h5>Art</h5>
                     </material-tab>
                 </material-tabs>
@@ -55,10 +55,10 @@
         <div class="navbar-inner darkhex">
             <div layout="horizontal" layout-align="start center">
                 <div id="ackw-bottom"></div>
-                <div flex="10"><material-button class="ackw-phone-menu"><a ng-click="sidebarToggle(sidebarMenu);"><i class="fa fa-bars fa-inverse"></i></a>
+                <div flex="10"><material-button class="ackw-phone-menu" ng-click="sidebarToggle(sidebarMenu);"><i class="fa fa-bars fa-inverse"></i>
                                 </material-button></div>
                 <div flex="90">
-                    <material-button>
+                    <material-button ui-sref="alexander" ui-sref-active="active">
                         <h6 class="brand">Alexander Kushi-Willis</h6>
                     </material-button>
                 </div>
