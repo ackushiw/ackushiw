@@ -26,6 +26,10 @@ $whitewall:url('../images/whitewall.jpg') no-repeat center center fixed;
   -o-background-size: cover !important;
   background-size: cover !important;
 }
+.container-fluid {
+    max-width: 100%;
+    padding:0;
+  }
 .whitewall {
   background: $whitewall;
   background-position: top center;
@@ -38,7 +42,7 @@ $whitewall:url('../images/whitewall.jpg') no-repeat center center fixed;
   height: auto;
 }
 ul.phone-icons {
-  margin-top: 78px;
+  margin-top: 0;
   li {
     color: lighten(black, 25%);
     material-button {
@@ -300,8 +304,8 @@ h1, h2, h3, h4 {
   }
 }
 .phone-icons {
-  position: fixed;
-  top: 20px;
+  position: relative;
+  top: 5px;
   left: 5px;
   padding: 5px;
   li {
@@ -381,8 +385,8 @@ iframe {
 
 body {
   z-index: -100;
-  padding-top: 65px;
-  padding-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 56px;
   width: 100%;
   height: auto;
   font-family: $default-font;
@@ -456,8 +460,14 @@ body {
 /* Responsive: Portrait tablets and up */
 
 @media screen and (min-width: 768px) {
+    body{
+        padding-top: 60px;
+        padding-bottom: 0;
+    }
   .container-fluid {
     max-width: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
   }
   .ackw-view {
     padding-top: 50px;
@@ -505,7 +515,7 @@ body {
     padding-top: 0;
   }
   .container-fluid {
-    max-width: 100%;
+    max-width: 100%;    
   }
   .ackw-view {
     padding-top: 50px;
@@ -536,6 +546,11 @@ body {
       min-width: 370px;
     }
   }
+}
+@media screen and (max-width: 460px) {
+    h6{
+        letter-spacing: 3pt;
+    }
 }
 /*Gradients*/
 
