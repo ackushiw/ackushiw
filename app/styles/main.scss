@@ -19,6 +19,9 @@ $whitewall:url('../images/whitewall.jpg') no-repeat center center fixed;
  .paper {
   background: $paper;
 }
+.fixed{
+    position:fixed;
+}
 .gallerybg {
   background-color: rgba(0, 0, 0, 0.04);
   -webkit-background-size: cover !important;
