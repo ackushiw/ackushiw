@@ -1,56 +1,97 @@
-// Karma configuration
-// http://karma-runner.github.io/0.10/config/configuration-file.html
+'use strict';
+
+var args = require('yargs').argv;
 
 module.exports = function(config) {
-  config.set({
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
+    var debug = false;
+    try {
+        debug = JSON.parse(args._[0]).debug;
+    } catch(err) {}
+    debug = debug || args.debug;
 
-    // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    var reporters = ['mocha', 'coverage'];
+    var browserify = {
+        debug: true,
+        transform: [
+            [{
+                ignore: ['**/*.test.js', '**/*.html', '**/bower_components/**', '**/node_modules/**']
+            }, 'browserify-istanbul']
+        ]
+    };
+    if(debug === true) {
+        delete browserify.transform;
+        reporters.splice(reporters.indexOf('coverage'), 1);
+    }
 
-    // list of files / patterns to load in the browser
-    files: [
-      'app/bower_components/angular/angular.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/bower_components/angular-cookies/angular-cookies.js',
-      'app/bower_components/angular-sanitize/angular-sanitize.js',
-      'app/bower_components/angular-route/angular-route.js',
-      'app/scripts/*.js',
-      'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
-    ],
+    config.set({
+        browserNoActivityTimeout: 60000,
 
-    // list of files / patterns to exclude
-    exclude: [],
+        // base path that will be used to resolve all patterns (eg. files, exclude)
+        basePath: '',
 
-    // web server port
-    port: 8080,
+        // frameworks to use
+        // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+        frameworks: ['browserify', 'jasmine'],
 
-    // level of logging
-    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
+        // list of files / patterns to load in the browser
+        files: [
+            './src/scripts/**/*.html',
+            './src/scripts/**/*.test.js'
+        ],
 
+        // list of files to exclude
+        exclude: [
+            './src/scripts/bundle*.js',
+            './src/scripts/main*.js'
+        ],
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+            './src/scripts/**/*.test.js': ['browserify']
+        },
 
+        // test results reporter to use
+        // possible values: 'dots', 'progress'
+        // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+        //  reporters: ['dots', 'coverage'],
+        reporters: reporters,
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Chrome'],
+        // web server port
+        port: 9876,
 
+        // enable / disable colors in the output (reporters and logs)
+        colors: true,
 
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
-  });
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_ERROR,
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
+
+        // start these browsers
+        // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+        browsers: ['PhantomJS'],
+
+        // Continuous Integration mode
+        // if true, Karma captures browsers, runs the tests and exits
+        singleRun: false,
+        mochaReporter: {
+            output: 'full'
+        },
+
+        coverageReporter: {
+            reporters: [{
+                type: 'text-summary'
+            }, {
+                type: 'cobertura',
+                file: 'coverage.xml'
+            }, {
+                type: 'lcov'
+            }]
+        },
+
+        browserify: browserify
+    });
 };
