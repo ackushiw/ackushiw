@@ -38,60 +38,32 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <meta name="application-name"
     content="Alexander Kushi-Willis">
 
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable"
-    content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style"
-    content="black-translucent">
-  <meta name="apple-mobile-web-app-title"
-    content="Alexander Kushi-Willis">
   <link rel="apple-touch-icon"
     sizes="180x180"
-    href="/images/manifest/apple-touch-icon.png"
-    async>
+    href="/images/manifest/apple-touch-icon.png">
   <link rel="icon"
     type="image/png"
-    href="/images/manifest/favicon-32x32.png"
     sizes="32x32"
-    async>
+    href="/images/manifest/favicon-32x32.png">
+  <link rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/images/manifest/favicon-16x16.png">
+  <link rel="manifest"
+    href="/images/manifest/manifest.json">
   <link rel="mask-icon"
     href="/images/manifest/safari-pinned-tab.svg"
-    color="#5bbad5"
-    async>
+    color="#5bbad5">
   <link rel="shortcut icon"
-    href="/favicon.ico"
-    async>
+    href="/images/manifest/favicon.ico">
   <meta name="msapplication-config"
     content="/images/manifest/browserconfig.xml">
-
-
-  <!-- Homescreen icons -->
-  <link rel="apple-touch-icon"
-    href="/images/manifest/icon-48x48.png">
-  <link rel="apple-touch-icon"
-    sizes="72x72"
-    href="/images/manifest/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon"
-    sizes="96x96"
-    href="/images/manifest/apple-touch-icon-96x96.png">
-  <link rel="apple-touch-icon"
-    sizes="144x144"
-    href="/images/manifest/apple-touch-icon-144x144.png">
-  <link rel="apple-touch-icon"
-    sizes="192x192"
-    href="/images/manifest/apple-touch-icon-192x192.png">
-
-  <!-- Tile icon for Windows 8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage"
-    content="/images/manifest/mstile-144x144.png">
-  <meta name="msapplication-TileColor"
-    content="#FFF">
-  <meta name="msapplication-tap-highlight"
-    content="no">
+  <meta name="theme-color"
+    content="#ffffff">
 
   <!-- Load webcomponents-loader.js to check and load any polyfills your browser needs -->
-  <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
-  <script src="/node_modules/redux/dist/redux.min.js"></script>
+  <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"
+    async></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js', { scope: '/' });
@@ -100,24 +72,170 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <!-- Load your application shell -->
   <link rel="import"
-    href="/src/app-shell.html">
+    href="/src/app-shell.html"
+    async>
 
   <!-- Add any global styles for body, document, etc. -->
   <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a {
+      font-family: "Courier", monospace;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
     }
-    
+
     * {
       -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }
+
+    div {
+      background-color: rgba(130, 186, 228, 0.8);
+    }
+
+    .content {
+      height: 100vh;
+      width: 100%;
+      z-index: -1;
+      position: fixed;
+    }
+
+    span.content {
+      background-color: white;
+      max-width: 100%;
+    }
+
+    span.desktop {
+      display: none;
+    }
+
+    .top {
+      height: 38vw;
+      border-bottom: 1vh solid rgba(130, 186, 228, 0.8);
+      max-width: 100%;
+      padding: 16px;
+    }
+
+    .top h2 {
+      height: 8vw;
+      font-size: 4vw;
+      margin: 8vw 0 0;
+      width: 100%;
+      line-height: 10vw;
+      color: white;
+      font-weight: lighter;
+    }
+
+    .left {
+      width: 38vw;
+      height: 38vw;
+      /*min-height: 152px;*/
+      /*background: linear-gradient(135deg, #ECEDDC 25%, transparent 25%) -50px 0,
+      linear-gradient(225deg, #ECEDDC 25%, transparent 25%) -50px 0,
+      linear-gradient(315deg, #ECEDDC 25%, transparent 25%),
+      linear-gradient(45deg, #ECEDDC 25%, transparent 25%);*/
+      background-size: 100px 100px;
+      background-color: rgba(130, 186, 228, 0.8);
+      /*background: 
+radial-gradient(circle at 50% 100%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 50% 0%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) -50px 0px;
+background-color: slategray;
+background-size:100px 75px;*/
+      opacity: 0.62;
+    }
+
+    .left img {
+      display: block;
+      background: white;
+      border-radius: 50%;
+      height: 20vw;
+      top: 24vw;
+      left: 24vw;
+      position: absolute;
+      width: 20vw;
+      z-index: 1000;
+    }
+
+    .toolbar {
+      height: 12vh;
+    }
+
+    @media screen and (min-width: 960px) {
+      span.content {
+        background-color: white;
+        max-width: 62vh;
+      }
+
+      span.desktop {
+        /*background-color: #620000;*/
+        display: block;
+        position: absolute;
+        left: 62vh;
+        top: 0;
+        width: 100%;
+        width: calc(100% - 62vh);
+        height: 100vh;
+        z-index: -10;
+      }
+
+      .top {
+        height: 38vh;
+        max-width: 62vh;
+        padding: 16px;
+      }
+
+      .top h2 {
+        height: 8vh;
+        font-size: 2.8vh;
+        margin: 5vh 0 0;
+        width: 38vh;
+        line-height: 10vh;
+      }
+
+      .left {
+        width: 24vh;
+        height: 38vh;
+        /*background: 
+radial-gradient(circle at 50% 100%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent),
+radial-gradient(circle at 50% 0%, transparent 20%, rgba(255,255,255,.3) 21%, rgba(255,255,255,.3) 34%, transparent 35%, transparent) -50px 0px;
+background-color: slategray;
+background-size:100px 75px;*/
+        opacity: 0.62;
+      }
+
+      .left img {
+        height: 20vh;
+        top: 24vh;
+        left: 12vh;
+        width: 20vh;
+      }
+    }
   </style>
 </head>
 
 <body>
+  <div class="content">
+    <span class="content"></span>
+    <span class="desktop"></span>
+    <div class="top">
+      <h2>Alexander Kushi-Willis</h2>
+      <div class="left">
+        <a href="/">
+        <img id="imgPreload" src="/images/headshot-min.jpg" height="20vh" width="20vh" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
   <app-shell>
     <div class="noscript-container">
       <noscript>Looks like you don't have javascript enabled</noscript>

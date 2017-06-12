@@ -1,8 +1,6 @@
 <link rel="import"
   href="../bower_components/polymer/polymer-element.html">
 <link rel="import"
-  href="../bower_components/polymerfire/firebase-app.html">
-<link rel="import"
   href="../bower_components/app-route/app-location.html">
 <link rel="import"
   href="../bower_components/app-route/app-route.html">
@@ -11,18 +9,12 @@
 <link rel="import"
   href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import"
-  href="../bower_components/paper-icon-button/paper-icon-button.html">
-<link rel="import"
   href="../bower_components/paper-toast/paper-toast.html">
 
 <link rel="import"
   href="routes/page-home.html">
 <link rel="import"
   href="app-icons.html">
-<link rel="import"
-  href="app-actions.html">
-<link rel="import"
-  href="redux-store.html">
 
 <dom-module id="app-shell">
   <template>
@@ -31,6 +23,7 @@
         height: 100vh;
         display: block;
       }
+      
       .toast-reload a{
         color: white;
       }
@@ -42,10 +35,6 @@
       data="{{routeData}}"
       tail="{{subroute}}"></app-route>
    
-    <firebase-app auth-domain="your-project.firebaseapp.com"
-      database-url="https://your-project.firebaseio.com/"
-      api-key="your-key">
-    </firebase-app>
     <iron-pages selected="[[page]]"
       attr-for-selected="name"
       fallback-selection="view404"
@@ -61,20 +50,19 @@
       duration="0"
       on-click="handleNotificationAction"
       opened="[[notify.open]]"
-      text="[[notify.message]]">
-      <a href$="[[notify.url]]">[[notify.btnText]]</a>
+      text="New version available">
+      <a href="#">Reload to update</a>
     </paper-toast>
 
   </template>
 
   <script>
-    class AppShell extends ReduxMixin(Polymer.Element) {
+    class AppShell extends Polymer.Element {
       static get is() { return 'app-shell'; }
       static get properties() {
         return {
           notify: {
             type: Object,
-            statePath: 'notifications',
             observer: '_notify'
           },
           page: {
@@ -83,43 +71,8 @@
             observer: '_pageChanged',
           },
           routeData: Object,
-          subroute: Object,
-          uid: {
-            type: String,
-            statePath: 'user.uid'
-          },
+          subroute: Object
         };
-      }
-      static get actions() {
-        return {
-          appReload() {
-            return {
-              type: 'APP_WINDOW_REFRESH'
-            }
-          },
-          notifyClose() {
-            return {
-              type: NOTIFY_CLOSE
-            }
-          },
-          notifyHandleAction(notifcationState) {
-            return {
-              type: notifcationState.btnAction,
-              data: notifcationState.data
-            }
-          },
-          notifyUpdateAvailable() {
-            return {
-              type: NOTIFY_APP_UPDATE
-            }
-          },
-          notifyWelcome() {
-            console.log('NOTIFY WELCOME');
-            return {
-              type: NOTIFY_WELCOME
-            }
-          }
-        }
       }
 
       static get observers() {
@@ -132,27 +85,24 @@
         super.connectedCallback();
         if (window.performance && performance.mark)
           performance.mark('app-shell.connected');
-        
-        // Get Redux state
-        const state = this.getState();
+
       }
 
       ready() {
         super.ready();
         const vm = this;
-        // Notifucations handled by redux
-        this.dispatch('notifyWelcome');
         if (navigator.serviceWorker && navigator.serviceWorker.controller) {
           navigator.serviceWorker.controller.onstatechange = function (e) {
             if (e.target.state === 'redundant') {
-              vm.dispatch('notifyUpdateAvailable');
+              vm.$.notificationToast.open();
             }
           };
         }
       }
 
       handleNotificationAction() {
-        this.dispatch('notifyHandleAction', this.notify);
+        window.location.reload(true);
+        this.$.notificationToast.close();
       }
 
       _routePageChanged(page) {
@@ -167,21 +117,6 @@
           null,
           null,
           true);
-      }
-
-      _notify(notifyState) {
-        const vm = this;
-        if (notifyState.opened) {
-          this.$.notificationToast.open();
-          if (notifyState.duration && notifyState.duration > 0) {
-            setTimeout(function() {
-              vm.dispatch('notifyClose');
-            },
-            notifyState.duration)
-          }
-        } else {
-          this.$.notificationToast.close();
-        }
       }
     }
 

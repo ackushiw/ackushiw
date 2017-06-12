@@ -8,30 +8,454 @@ Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
 
-<link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../styles/shared-styles.html">
+<link rel="import"
+  href="../../bower_components/polymer/polymer-element.html">
+<link rel="import"
+  href="../../bower_components/api-ai-agent/api-ai-agent.html">
+
+<link rel="import"
+  href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import"
+  href="../../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import"
+  href="../../bower_components/paper-input/paper-input.html">
+<link rel="import"
+  href="../styles/shared-styles.html">
 
 <dom-module id="page-home">
   <template>
     <style include="shared-styles">
-      :host {
+       :host {
         display: block;
+        padding-top: 38vh;
+        height: 100vh;
+        box-sizing: border-box;
+      }
 
-        padding: 10px;
+      .content {}
+
+      .dialog {
+        position: fixed;
+        bottom: 20vh;
+        width: 100%;
+        z-index: 100;
+      }
+
+      .dialog-container {
+        height: 62vh;
+        height: calc(100vh - 38vw);
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .input-area {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+      }
+
+
+      .input-icon {
+        margin: 4px 8px;
+      }
+
+      .left img {
+        display: block;
+        background: white;
+        border-radius: 50%;
+        height: 20vw;
+        top: 24vw;
+        left: 24vw;
+        position: fixed;
+        width: 20vw;
+        z-index: 1;
+        box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .message {
+        background: rgba(255, 255, 255, 0.3)
+      }
+
+      .message p {
+        padding: 2px;
+        margin: 0;
+      }
+
+      .message.bot {
+        margin-left: 24vw;
+      }
+
+
+
+      .message.bot p {
+        border-left: 2px solid rgba(130, 186, 228, 0.8);
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .message.user {
+        margin-right: calc(100% - 24vw - 2px);
+      }
+
+      .message.user p {
+        text-align: right;
+        border-right: 2px solid rgba(203, 155, 155, 0.9);
+      }
+
+      .opacity0 {
+        opacity: 0;
+      }
+
+      .opacity20 {
+        opacity: 0.2;
+      }
+
+      .opacity40 {
+        opacity: 0.4;
+      }
+
+      .opacity60 {
+        opacity: 0.6;
+      }
+
+      .opacity80 {
+        opacity: 0.8;
+      }
+
+      .opacity100 {
+        opacity: 1;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 38vw;
+        left: 0;
+        padding: 16px;
+        align-content: right;
+      }
+
+      nav .art,
+      nav .photography {
+        display: none;
+      }
+
+      section#socialLinks {
+        position: fixed;
+        top: calc(38vw - 44px);
+        left: 50vw;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        vertical-align: middle;
+      }
+
+      section#socialLinks a {
+        display: block;
+        margin: 8px;
+        align-self: center;
+      }
+
+      section#socialLinks .name{
+        display: none;
+      }
+
+      paper-input {
+        --paper-input-container-focus-color: rgba(203, 155, 155, 0.9);
+      }
+
+
+     
+
+      @media screen and (min-width: 380px) {
+        nav .art {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 512px) {
+        nav .photography {
+          display: block;
+        }
+      }
+
+      @media screen and (min-width: 960px) {
+        .left img {
+          height: 20vh;
+          top: 24vh;
+          left: 12vh;
+          width: 20vh;
+        }
+        .input-area {
+          bottom: 12vh;
+          max-width: 62vh;
+        }
+        .message.bot {
+          margin-left: calc(62vh - 2px);
+        }
+        .message.user {
+          margin-right: calc(100% - 62vh - 2px);
+        }
+        .message p {
+          padding: 8px 16px;
+        }
+        nav {
+          top: 38vh;
+        }
+        section#socialLinks {
+          top: 32vh;
+          left: 38vh;
+        }
+      }
+       @media screen and (max-height: 400px) {
+        .dialog-container {
+          background-color: white;
+          height: 100vh;
+        }
+        .left img {
+          height: 60px;
+          top: 20px;
+          left: 16px;
+          width: 60px;
+          z-index: 100;
+        }
+        section#socialLinks {
+          box-sizing: border-box;
+          position: fixed;
+          background-color: rgba(130, 186, 228, 1);
+          top: 0;
+          left: 0;
+          height: 60px;
+          padding: 16px;
+          z-index: 50;
+          width: 100%;
+        }
+        section#socialLinks .spacer{
+          width: 18vw;
+        }
+        section#socialLinks .name{
+          font-size: 12px;
+          color: white;
+          align-self: center;
+          flex: 1;
+        }
       }
     </style>
+    <api-ai-agent access-token="bde2cfac36b94afe933a4f20e3501a1d"
+      loading="{{processing}}"
+      text-request="[[command]]"
+      last-speech-response="{{agentSpeech}}"></api-ai-agent>
+    <div class="content">
+      <div id="imgMain"
+        class="left">
+        <a href="/">
+        <img src="/images/headshot.jpg" alt="">
+        </a>
+      </div>
+      <!--<nav>
+        <a href="/art" class="art">/art</a>
+        <a href="/acting">/acting</a>
+        <a href="/dev">/development</a>
+        <a href="/photography" class="photography">/photography</a>
+      </nav>-->
+      <section id="socialLinks">
+        <span class="spacer"></span>
+        <span class="name">Alexander Kushi-Willis</span>
+        <a id="instagram"
+          href="https://www.instagram.com/ackushiw/">
+          <svg style="width:24px;height:24px"
+            viewBox="0 0 24 24">
+            <path fill="#FFF"
+              d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"
+            />
+          </svg>
+        </a>
+        <a id="facebook"
+          href="https://www.facebook.com/ackushiw">
+          <svg style="width:24px;height:24px"
+            viewBox="0 0 24 24">
+            <path fill="#FFF"
+              d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z"
+            />
+          </svg>
+        </a>
+        <a id="github"
+          href="https://github.com/ackushiw">
+          <svg style="width:24px;height:24px"
+            viewBox="0 0 24 24">
+            <path fill="#FFF"
+              d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+            />
+          </svg>
+        </a>
+        <!--<a id="linkedin" href="">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M19,3A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3H19M18.5,18.5V13.2A3.26,3.26 0 0,0 15.24,9.94C14.39,9.94 13.4,10.46 12.92,11.24V10.13H10.13V18.5H12.92V13.57C12.92,12.8 13.54,12.17 14.31,12.17A1.4,1.4 0 0,1 15.71,13.57V18.5H18.5M6.88,8.56A1.68,1.68 0 0,0 8.56,6.88C8.56,5.95 7.81,5.19 6.88,5.19A1.69,1.69 0 0,0 5.19,6.88C5.19,7.81 5.95,8.56 6.88,8.56M8.27,18.5V10.13H5.5V18.5H8.27Z" />
+</svg>
+        </a>
+        <a id="twitter" href="">
+          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+</svg>
+          </a><a id="googlePlus" href="">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+    <path fill="#000000" d="M23,11H21V9H19V11H17V13H19V15H21V13H23M8,11V13.4H12C11.8,14.4 10.8,16.4 8,16.4C5.6,16.4 3.7,14.4 3.7,12C3.7,9.6 5.6,7.6 8,7.6C9.4,7.6 10.3,8.2 10.8,8.7L12.7,6.9C11.5,5.7 9.9,5 8,5C4.1,5 1,8.1 1,12C1,15.9 4.1,19 8,19C12,19 14.7,16.2 14.7,12.2C14.7,11.7 14.7,11.4 14.6,11H8Z" />
+</svg>
+          </a>-->
+      </section>
+      <div class="dialog-container">
+        <div class="dialog">
+          <template is="dom-repeat"
+            items=[[dialog]]
+            as=item
+            index-as=index>
+            <!-- {{item}} and {{index}} can be used in this binding scope -->
 
-    <div class="card">
-      <div class="circle">3</div>
-      <h1>Page Home</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+            <template is="dom-if"
+              if={{item.bot}}>
+              <div class$="message bot [[_calcOpacity(index, dialog.length)]]">
+                <p>[[item.message]]</p>
+
+                <template is="dom-if"
+                  if={{item.extras}}>
+                  <br>
+                  <a href$="[[item.extras.link]]">[[item.extras.linkText]]</a>
+                </template>
+
+              </div>
+            </template>
+            <template is="dom-if"
+              if={{item.user}}>
+              <div class$="message user [[_calcOpacity(index, dialog.length)]]">
+                <p>[[item.message]]</p>
+              </div>
+            </template>
+          </template>
+        </div>
+        <div class="input-area">
+          <paper-input autocorrect
+            autofocus
+            label="[[commandLabel]]"
+            value="{{commandText}}"
+            on-keydown="handleEnter">
+            <iron-icon class="input-icon"
+              icon="app-icons:message"
+              slot="prefix"></iron-icon>
+            <paper-icon-button class="input-icon send"
+              icon="app-icons:send"
+              slot="suffix"
+              on-tap="handleSend"></paper-icon-button>
+
+          </paper-input>
+        </div>
+      </div>
     </div>
+
   </template>
 
   <script>
     class PageHome extends Polymer.Element {
       static get is() { return 'page-home'; }
+      static get propterties() {
+        return {
+          agentSpeech: {
+            type: String,
+            observer: 'handleSpeech'
+          },
+          command: String,
+          commandLabel: {
+            type: String,
+            value: 'Say hi... :)'
+          },
+          commandText: String,
+          dialog: {
+            type: Array,
+            notify: true
+          },
+          processing: Boolean,
+          hasInteracted: {
+            type: Boolean,
+            value: false
+          }
+
+        }
+      }
+
+      ready() {
+        super.ready();
+        if (!this.dialog) {
+          this.dialog = [{
+            bot: true,
+            message: 'Hello, my name is Alexander'
+          }];
+        }
+        this.commandLabel = 'Say hi... :)';
+        this.addEventListener('api-ai-result', e => this.handleSpeech(e));
+
+        // Polymer.RenderStatus.afterNextRender(this, () => {
+        //   Polymer.importHref(this.resolveUrl(`../../bower_components/api-ai-agent/api-ai-agent.html`),
+        //   null, null, true);
+        // });
+      }
+
+      handleEnter(e) {
+        if (e.keyCode == 13 || e.which == 13) {
+          this.handleSend();
+        }
+      }
+
+      handleSend() {
+        const newMessage = {
+          from: 'user',
+          user: true,
+          message: this.commandText
+        };
+        this.command = this.commandText;
+        this.commandText = '';
+        this.push('dialog', newMessage);
+      }
+
+      handleSpeech(newValue, oldValue) {
+        console.log('handleSpeech', newValue);
+        if (!newValue && newValue.length < 1) {
+          return;
+        }
+        if (!this.hasInteracted) {
+          this.hasInteracted = true;
+          this.commandLabel = 'Ask me anything...'
+        }
+        const newMessage = {
+          from: 'bot',
+          bot: true,
+          message: newValue.detail.speech
+        };
+        newMessage.extras = newValue.detail.messages[1] && !!newValue.detail.messages[1].payload ? newValue.detail.messages[1].payload.details : null;
+        console.log('Dialog', newMessage);
+        this.push('dialog', newMessage);
+      }
+
+      _calcOpacity(index, dialogLength) {
+        const position = index + 1;
+        const distanceFromStart = dialogLength - position;
+        if (distanceFromStart > 8) {
+          return 'opacity0';
+        } else if (distanceFromStart > 5) {
+          return 'opacity20';
+        } else if (distanceFromStart > 3) {
+          return 'opacity40';
+        } else if (distanceFromStart > 2) {
+          return 'opacity60';
+        } else if (distanceFromStart > 1) {
+          return 'opacity80';
+        } else {
+          return 'opacity100';
+        }
+      }
     }
 
     window.customElements.define(PageHome.is, PageHome);

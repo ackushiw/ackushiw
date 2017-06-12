@@ -19,8 +19,7 @@
   ],
   "builds": [{
     "name": "default",
-    "addServiceWorker": true,
-    "swPrecacheConfig": "sw-precache-config.js"
+    "preset": "es5-bundled"
   },{
     "name": "bundled",
     "bundle": true,
