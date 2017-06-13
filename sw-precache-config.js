@@ -18,7 +18,7 @@ module.exports = {
     'src/styles/**/*',
     'bower_components/webcomponentsjs/*',
   ],
-  cacheId: 'v0.0.0-pre12',
+  cacheId: 'v0.5.1',
   navigateFallback: 'index.html',
   navigateFallbackWhitelist: [
     /^(?!\/__).*/, // firebase

@@ -1,18 +1,21 @@
 {
-  "name": "Alexander Kushi-Willis",
-  "short_name": "@ackushiw",
-  "description": "my personal website",
-  "display": "standalone",
-  "start_url": "/?homescreen=1",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "gcm_sender_id": "103953800507",
-  "icons": [
-		{
-			"src": "images/manifest/android-chrome-192x192.png",
-			"sizes": "192x192",
-			"type": "image/png",
-			"density": 4
-		}
-	]
+    "short_name": "@ackushiw",
+    "name": "Alexander Kushi-Willis",
+    "start_url": "index.html?utm_source=homescreen",
+    "icons": [
+        {
+            "src": "/images/manifest/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/manifest/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
+    "display": "browser",
+    "orientation": "portrait"
 }

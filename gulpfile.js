@@ -15,6 +15,7 @@ const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const mergeStream = require('merge-stream');
 const polymerBuild = require('polymer-build');
+const $ = require('gulp-load-plugins')();
 
 // Here we add tools that will be used to process our source files.
 const imagemin = require('gulp-imagemin');
@@ -29,6 +30,44 @@ const swPrecacheConfig = require('./sw-precache-config.js');
 const polymerJson = require('./polymer.json');
 const polymerProject = new polymerBuild.PolymerProject(polymerJson);
 const buildDirectory = 'build';
+
+/**
+ * Create responsive images
+ */
+function images() {
+  return gulp.src('images-dev/*.{jpg,png}')
+    .pipe($.responsive({
+      // Convert all images to JPEG format
+      '*': [{
+        width: 180,
+        rename: {
+          extname: '.jpg',
+        },
+      }, {
+        // Produce 2x images and rename them
+        width: 180 * 2,
+        rename: {
+          suffix: '@2x',
+          extname: '.jpg',
+        },
+      }, {
+        // Produce 3x images and rename them
+        width: 180 * 3,
+        rename: {
+          suffix: '@3x',
+          extname: '.jpg',
+        },
+      }, {
+        // Produce 5x images and rename them
+        width: 180 * 5,
+        rename: {
+          suffix: '@5x',
+          extname: '.jpg',
+        },
+      }],
+    }))
+    .pipe(gulp.dest('images'));
+}
 
 /**
  * Waits for the given ReadableStream
@@ -123,3 +162,4 @@ function build() {
 }
 
 gulp.task('build', build);
+gulp.task('images', images);
