@@ -27,12 +27,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
        :host {
         display: block;
-        padding-top: 38vh;
         height: 100vh;
         box-sizing: border-box;
       }
-
-      .content {}
 
       .dialog {
         position: fixed;
@@ -62,7 +59,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         margin: 4px 8px;
       }
 
-      .left img {
+      .left{
+        background: none;
+        position: fixed;
+      }
+
+      img.main {
         display: block;
         background: white;
         border-radius: 50%;
@@ -186,7 +188,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
 
       @media screen and (min-width: 960px) {
-        .left img {
+        img.main {
           height: 20vh;
           top: 24vh;
           left: 12vh;
@@ -218,7 +220,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           background-color: white;
           height: 100vh;
         }
-        .left img {
+        img.main {
           height: 60px;
           top: 20px;
           left: 16px;
@@ -252,12 +254,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       text-request="[[command]]"
       last-speech-response="{{agentSpeech}}"></api-ai-agent>
     <div class="content">
-      <div id="imgMain"
-        class="left">
         <a href="/">
-        <img src="/images/headshot.jpg" srcset="/images/headshot.jpg 1x, /images/headshot@2x.jpg 2x, /images/headshot@3x.jpg 3x, /images/headshot@5x.jpg 5x" alt="">
+        <img class="main" src="/images/headshot.jpg" srcset="/images/headshot.jpg 1x, /images/headshot@2x.jpg 2x, /images/headshot@3x.jpg 3x, /images/headshot@5x.jpg 5x" alt="">
         </a>
-      </div>
       <!--<nav>
         <a href="/art" class="art">/art</a>
         <a href="/acting">/acting</a>

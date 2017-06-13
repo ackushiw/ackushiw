@@ -116,18 +116,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       box-sizing: border-box;
     }
 
-    div {
+    div.bg {
       background-color: rgba(130, 186, 228, 0.8);
+    }
+
+    .fixed{
+      position: fixed;
     }
 
     .content {
       height: 100vh;
       width: 100%;
-      z-index: -1;
-      position: fixed;
     }
 
-    span.content {
+    span.content.main {
       background-color: white;
       max-width: 100%;
     }
@@ -193,7 +195,7 @@ background-size:100px 75px;*/
         max-width: 62vh;
       }
 
-      span.desktop {
+      div.desktop {
         /*background-color: #620000;*/
         display: block;
         position: absolute;
@@ -251,12 +253,12 @@ background-size:100px 75px;*/
 </head>
 
 <body>
-  <div class="content">
-    <span class="content"></span>
-    <span class="desktop"></span>
-    <div class="top">
+  <div class="content fixed">
+    <span class="content main"></span>
+    <div class="desktop bg"></div>
+    <div class="top bg">
       <h2>Alexander Kushi-Willis</h2>
-      <div class="left">
+      <div class="left bg">
         <a href="/">
         <img id="imgPreload" src="/images/headshot.jpg" srcset="/images/headshot.jpg 1x, /images/headshot@2x.jpg 2x, /images/headshot@3x.jpg 3x, /images/headshot@5x.jpg 5x" height="20vh" width="20vh" alt="">
         </a>
